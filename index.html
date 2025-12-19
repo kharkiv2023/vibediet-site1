@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+	<meta name="google-site-verification" content="96ftFPth2fiFhgYGWIJIHDoAOcJj6RA_J2uTOV8vuuo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartDiet — Калькулятор здоров'я</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <nav class="side-menu">
+            <div class="menu-logo">
+                <i class="fa-solid fa-heart-pulse"></i> SmartDiet
+            </div>
+            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Головна</a>
+            <a href="diabetes.html"><i class="fa-solid fa-droplet"></i> Діабет</a>
+            <a href="lose.html"><i class="fa-solid fa-fire"></i> Схуднення</a>
+            <a href="gain.html"><i class="fa-solid fa-dumbbell"></i> Набір маси</a>
+            
+            <div class="menu-footer-ad">
+                <p>Ваше здоров'я — наш пріоритет</p>
+            </div>
+        </nav>
+
+        <main class="content-area">
+            <div class="container">
+                <h1>Калькулятор здоров'я</h1>
+                <p class="subtitle">Розрахунок для діабету, схуднення та маси</p>
+                
+                <form id="calc-form">
+                    <div class="input-group">
+                        <label>Ваша стать</label>
+                        <select id="gender">
+                            <option value="male">Чоловік</option>
+                            <option value="female">Жінка</option>
+                        </select>
+                    </div>
+
+                    <div class="input-row">
+                        <input type="number" id="weight" placeholder="Вага (кг)" required>
+                        <input type="number" id="height" placeholder="Зріст (см)" required>
+                    </div>
+                    
+                    <input type="number" id="age" placeholder="Вік (років)" required>
+
+                    <label>Ваша мета</label>
+                    <select id="goal">
+                        <option value="maintain">Підтримка форми</option>
+                        <option value="lose">Схуднення</option>
+                        <option value="gain">Набір маси</option>
+                        <option value="diabetes">Контроль при діабеті</option>
+                    </select>
+
+                    <button type="submit">Отримати розрахунок</button>
+                </form>
+
+                <div id="result" class="hidden">
+                    <h3>Ваш персональний план:</h3>
+                    <div class="res-item">Калорії: <span id="calories-out"></span> ккал</div>
+                    <div class="macros">
+                        <div class="macro-box">Б: <span id="p-out"></span>г</div>
+                        <div class="macro-box">Ж: <span id="f-out"></span>г</div>
+                        <div class="macro-box">В: <span id="c-out"></span>г</div>
+                    </div>
+                    <p id="advice" class="advice-text"></p>
+                    </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
