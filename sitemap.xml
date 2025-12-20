@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Головна сторінка -->
   <url>
     <loc>https://kharkiv2023.github.io/vibediet-site1/</loc>
     <priority>1.0</priority>
   </url>
+
+  <!-- Сторінка Діабет -->
   <url>
     <loc>https://kharkiv2023.github.io/vibediet-site1/diabetes.html</loc>
     <priority>0.8</priority>
   </url>
+
+  <!-- Сторінка Схуднення -->
   <url>
     <loc>https://kharkiv2023.github.io/vibediet-site1/lose.html</loc>
     <priority>0.8</priority>
   </url>
+
+  <!-- Сторінка Набір маси -->
   <url>
     <loc>https://kharkiv2023.github.io/vibediet-site1/gain.html</loc>
     <priority>0.8</priority>
   </url>
+
 </urlset>
-
-
