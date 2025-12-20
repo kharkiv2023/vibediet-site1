@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vibediet.netlify.app/</loc>
+    <loc>https://kharkiv2023.github.io/vibediet-site1/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vibediet.netlify.app/diabetes.html</loc>
+    <loc>https://kharkiv2023.github.io/vibediet-site1/diabetes.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vibediet.netlify.app/lose.html</loc>
+    <loc>https://kharkiv2023.github.io/vibediet-site1/lose.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vibediet.netlify.app/gain.html</loc>
+    <loc>https://kharkiv2023.github.io/vibediet-site1/gain.html</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
