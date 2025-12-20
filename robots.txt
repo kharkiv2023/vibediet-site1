@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Вкажіть шлях до вашого Sitemap
+Sitemap: https://kharkiv2023.github.io/vibediet-site1/sitemap.xml
