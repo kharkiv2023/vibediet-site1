@@ -1,82 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="yUEhQ4gc4F38slNbabB3xoVANOeG0erZrjBqyKrAsKI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO -->
-    <title>SmartDiet — калькулятор харчування та здоров'я</title>
-    <meta name="description" content="Калькулятор для діабету, схуднення та набору маси. Розрахунок здорового харчування для чоловіків і жінок.">
-    <link rel="canonical" href="https://kharkiv2023.github.io/vibediet-site1/">
-
-    <!-- Стилі -->
+    <meta name="description" content="Безкоштовний калькулятор калорій та БЖВ. Отримайте персональний план харчування для схуднення, набору маси або контролю діабету.">
+    <title>SmartDiet — Калькулятор здоров'я</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
 </head>
 <body>
 
-    <div class="main-wrapper">
-        <nav class="side-menu">
-            <div class="menu-logo">
+    <header class="top-header">
+        <div class="header-container">
+            <div class="logo">
                 <i class="fa-solid fa-heart-pulse"></i> SmartDiet
             </div>
-            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Головна</a>
-            <a href="diabetes.html"><i class="fa-solid fa-droplet"></i> Діабет</a>
-            <a href="lose.html"><i class="fa-solid fa-fire"></i> Схуднення</a>
-            <a href="gain.html"><i class="fa-solid fa-dumbbell"></i> Набір маси</a>
             
-            <div class="menu-footer-ad">
-                <p>Ваше здоров'я — наш пріоритет</p>
+            <nav class="desktop-nav" id="side-nav">
+                <a href="index.html" class="active">Головна</a>
+                <a href="diabetes.html">Діабет</a>
+                <a href="lose.html">Схуднення</a>
+                <a href="gain.html">Набір маси</a>
+                <a href="maintain.html">Підтримка форми</a> 
+            </nav>
+
+            <div class="menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
             </div>
-        </nav>
+        </div>
+    </header>
 
-        <main class="content-area">
-            <div class="container">
-                <h1>Калькулятор здоров'я</h1>
-                <p class="subtitle">Розрахунок для діабету, схуднення та маси</p>
-                
-                <form id="calc-form">
-                    <div class="input-group">
-                        <label>Ваша стать</label>
-                        <select id="gender">
-                            <option value="male">Чоловік</option>
-                            <option value="female">Жінка</option>
-                        </select>
-                    </div>
-
-                    <div class="input-row">
-                        <input type="number" id="weight" placeholder="Вага (кг)" required>
-                        <input type="number" id="height" placeholder="Зріст (см)" required>
-                    </div>
-                    
-                    <input type="number" id="age" placeholder="Вік (років)" required>
-
-                    <label>Ваша мета</label>
-                    <select id="goal">
-                        <option value="maintain">Підтримка форми</option>
-                        <option value="lose">Схуднення</option>
-                        <option value="gain">Набір маси</option>
-                        <option value="diabetes">Контроль при діабеті</option>
-                    </select>
-
-                    <button type="submit">Отримати розрахунок</button>
-                </form>
-
-                <div id="result" class="hidden">
-                    <h3>Ваш персональний план:</h3>
-                    <div class="res-item">Калорії: <span id="calories-out"></span> ккал</div>
-                    <div class="macros">
-                        <div class="macro-box">Б: <span id="p-out"></span>г</div>
-                        <div class="macro-box">Ж: <span id="f-out"></span>г</div>
-                        <div class="macro-box">В: <span id="c-out"></span>г</div>
-                    </div>
-                    <p id="advice" class="advice-text"></p>
+    <main class="content-area">
+        <div class="container">
+            <h1>Калькулятор здоров'я</h1>
+            <p class="subtitle">Перетягніть повзунки, щоб отримати миттєвий результат</p>
+            
+            <form id="calc-form">
+                <div class="gender-switch">
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="male" checked>
+                        <span class="gender-box">Чоловік</span>
+                    </label>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="female">
+                        <span class="gender-box">Жінка</span>
+                    </label>
                 </div>
-            </div>
-        </main>
+
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Вік</label>
+                        <span id="age-val" class="slider-value">25</span>
+                    </div>
+                    <input type="range" id="age" min="15" max="100" value="25" class="modern-slider">
+                </div>
+
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Зріст (см)</label>
+                        <span id="height-val" class="slider-value">175</span>
+                    </div>
+                    <input type="range" id="height" min="120" max="220" value="175" class="modern-slider">
+                </div>
+
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Вага (кг)</label>
+                        <span id="weight-val" class="slider-value">70</span>
+                    </div>
+                    <input type="range" id="weight" min="40" max="180" value="70" class="modern-slider">
+                </div>
+
+                <div class="slider-group">
+                    <label style="font-size: 20px; font-weight: bold; display: block; margin-bottom: 15px; color: #2c3e50;">Ваша мета:</label>
+                    <div class="goal-selection">
+                        <input type="radio" name="goal" value="lose" id="goal-lose" checked>
+                        <label for="goal-lose" class="goal-label">🔥 Схуднення</label>
+
+                        <input type="radio" name="goal" value="gain" id="goal-gain">
+                        <label for="goal-gain" class="goal-label">💪 Набір маси</label>
+
+                        <input type="radio" name="goal" value="diabetes" id="goal-diabetes">
+                        <label for="goal-diabetes" class="goal-label">🩸 Контроль діабету</label>
+
+                        <input type="radio" name="goal" value="maintain" id="goal-maintain">
+                        <label for="goal-maintain" class="goal-label">⚖️ Підтримка форми</label>
+                    </div>
+	
+                </div>
+
+                <button type="submit" class="main-btn">
+                    <i class="fas fa-calculator"></i> Розрахувати план
+                </button>
+            </form>
+<div id="result" class="hidden">
+    <h3>Ваш результат:</h3>
+    <p>Калорії: <span id="calories-out">0</span> ккал</p>
+    <div class="macros">
+        Б: <span id="p-out">0</span>г | Ж: <span id="f-out">0</span>г | В: <span id="c-out">0</span>г
     </div>
+    <p id="advice"></p>
+    <button id="cta-btn" class="main-btn">Отримати персональні рекомендації →</button>
+</div>
+           
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 40px;">
+        <p>&copy; 2024 SmartDiet. Всі права захищені.</p>
+        <p style="font-size: 12px; opacity: 0.7;">Перед початком будь-якої дієти проконсультуйтеся з лікарем.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

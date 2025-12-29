@@ -2,57 +2,185 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Набір маси — SmartDiet</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
 </head>
 <body>
 
-<nav class="side-menu">
-    <div class="menu-logo">
-        <i class="fa-solid fa-heart-pulse"></i> SmartDiet
-    </div>
-    <a href="index.html"><i class="fa-solid fa-house"></i> Головна</a>
-    <a href="diabetes.html"><i class="fa-solid fa-droplet"></i> Діабет</a>
-    <a href="lose.html"><i class="fa-solid fa-fire"></i> Схуднення</a>
-    <a href="gain.html" class="active"><i class="fa-solid fa-dumbbell"></i> Набір маси</a>
-    
-    <div class="menu-footer-ad">
-        <p>Ваше здоров'я — наш пріоритет</p>
-    </div>
-</nav>
+    <header class="top-header">
+        <div class="header-container">
+            <div class="logo"><i class="fa-solid fa-heart-pulse"></i> SmartDiet</div>
+            <nav class="desktop-nav" id="side-nav">
+                <a href="index.html">Головна</a>
+                <a href="diabetes.html">Діабет</a>
+                <a href="lose.html">Схуднення</a>
+                <a href="gain.html" class="active">Набір маси</a>
+                <a href="maintain.html">Підтримка форми</a> 
+            </nav>
+            <div class="menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
 
     <main class="content-area">
-        <div class="container">
-            <h1>План для набору маси</h1>
-            <p>Для росту м'язів потрібен невеликий надлишок калорій та достатня кількість білка.</p>
-            
-            <h2>Як правильно набирати вагу:</h2>
-            <ul style="margin-left: 20px; color: #7f8c8d; margin-bottom: 20px;">
-                <li>Збільште калорійність раціону на 10-15% від норми.</li>
-                <li>Робіть акцент на складних вуглеводах (каші, макарони твердих сортів).</li>
-                <li>Не забувайте про силові тренування для росту м'язів.</li>
-            </ul>
+        <div class="container" style="max-width: 900px;">
+            <a href="index.html" class="back-link">← Назад до калькулятора</a>
 
-            <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; color: #2980b9;">
-                <strong>Порада:</strong> Сон — це час, коли м'язи ростуть. Спіть не менше 8 годин.
-            </div>
-			<a href="https://bcaa.ua/ua/tseli/nabor_massi?srsltid=AfmBOoqqBIcxuImLo3V5Z2yA4qRV1uAluQvU2q7tgzdsxBUed-XzVKDM" class="btn-link" style="background-color: #e67e22;">
-    <i class="fa-solid fa-cart-shopping"></i> Отримати знижку на протеїн для росту м'язів
-</a>
-<p style="font-size: 12px; color: #7f8c8d; margin-top: 5px;">* Перевірені добавки з сертифікатами якості</p>
-			<article style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px;">
-    <h2>Як ростуть м'язи: Основи анаболізму</h2>
-    <p>Для успішного набору м'язової маси недостатньо просто тренуватися. Організму потрібен <strong>профіцит калорій</strong> — стан, коли ви споживаєте більше енергії, ніж витрачаєте. Саме цей надлишок іде на побудову нових тканин.</p>
-    
-    <p>Ключовим елементом є білок. Рекомендується споживати від 1.6 до 2.2 г білка на кілограм ваги тіла. Якщо ви не встигаєте добирати норму зі звичайної їжі, <strong>спортивне харчування</strong> (протеїн або гейнер) стане вашим найкращим помічником.</p>
-    
-    <p>Не забувайте про складні вуглеводи (каші, макарони твердих сортів) — вони дають енергію для важких тренувань, без яких ріст маси неможливий.</p>
-</article>
+            <header style="margin-bottom: 30px; border-bottom: 2px solid #f39c12; padding-bottom: 20px;">
+                <h1>Програма набору м'язової маси</h1>
+                <p style="font-style: italic; color: #7f8c8d;">Здоровий профіцит калорій та ріст м'язів</p>
+            </header>
 
-            <a href="index.html" style="display: block; margin-top: 20px; color: #3498db; text-decoration: none;">← Повернутися до калькулятора</a>
+            <section>
+                <div style="display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px; background: #fff9eb; padding: 20px; border-radius: 10px; border-top: 5px solid #f39c12;">
+                        <h3 style="color: #e67e22;">💪 Основа раціону:</h3>
+                        <ul style="list-style: none; margin-top: 10px; line-height: 1.8;">
+                            <li>• Яловичина, яйця, горіхи</li>
+                            <li>• Складні вуглеводи (рис, макарони)</li>
+                            <li>• Корисні жири (авокадо, олія)</li>
+                            <li>• Молочні продукти високої жирності</li>
+                        </ul>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; background: #eef9f1; padding: 20px; border-radius: 10px; border-top: 5px solid #3498db;">
+                        <h3 style="color: #3498db;">📈 Поради:</h3>
+                        <ul style="list-style: none; margin-top: 10px; line-height: 1.8;">
+                            <li>• Їжте 5-6 разів на день</li>
+                            <li>• Пийте багато води</li>
+                            <li>• Обов'язково тренуйтеся з вагою</li>
+                            <li>• Спіть не менше 8 годин</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top: 50px;">
+                <h2 style="text-align: center; margin-bottom: 30px;">Оберіть свій план набору</h2>
+                <div class="menu-offer-section">
+                    <div class="offer-card free-card">
+                        <h3>🌱 Пробний день</h3>
+                        <p style="color: #7f8c8d; margin-bottom: 15px;">Безкоштовно</p>
+                        <ul style="text-align: left; margin-bottom: 20px; list-style: none;">
+                            <li>✅ <strong>Сніданок:</strong> Вівсянка на молоці з бананом</li>
+                            <li>✅ <strong>Обід:</strong> Паста з яловичиною та сиром</li>
+                            <li>✅ <strong>Вечеря:</strong> Рис з лососем або куркою</li>
+                        </ul>
+                        <a href="gain-free-day.pdf" target="_blank" class="buy-btn" style="background: #95a5a6; text-decoration: none; display: block; text-align: center;">
+                            <i class="fas fa-file-pdf"></i> Отримати рекомендації
+                        </a>
+                    </div>
+
+                    <div class="offer-card premium-card">
+                        <div class="premium-badge" style="background: #f39c12;">MASS</div>
+                        <h3>👑 Максимум (30 днів)</h3>
+                        <p>Ріст м'язів + Сила</p>
+                        <div class="price">7 днів—79 грн <br>30 днів—149 грн</div>
+                        <ul style="text-align: left; margin-bottom: 20px; list-style: none;">
+                            <li>🔥 <strong>План набору 3000+ ккал</strong></li>
+                            <li>🥩 <strong>Білкове меню</strong></li>
+                            <li>🏋️ <strong>Програма тренувань</strong> у залі</li>
+                        </ul>
+                        <a href="#" class="buy-btn" onclick="showDevMessage(); return false;">Хочу схуднути</a>
+                    </div>
+					<section class="add-review-section" style="margin-top: 50px; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    <h3 style="text-align: center; margin-bottom: 20px;">Залишити свій відгук</h3>
+    
+    <form action="https://formspree.io/f/xaqylgor" method="POST" id="review-form" style="display: flex; flex-direction: column; gap: 15px;">
+        
+        <input type="text" name="Ім'я" placeholder="Ваше ім'я" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;">
+        
+        <select name="Оцінка" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;">
+            <option value="5">⭐⭐⭐⭐⭐ (Відмінно)</option>
+            <option value="4">⭐⭐⭐⭐ (Добре)</option>
+            <option value="3">⭐⭐⭐ (Задовільно)</option>
+        </select>
+
+        <textarea name="Відгук" rows="4" placeholder="Ваш результат або запитання..." required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"></textarea>
+        
+        <input type="hidden" name="_next" value="https://kharkiv2023.github.io/vibediet-site1/gain.html">
+        
+        <button type="submit" id="submit-btn" class="main-btn" style="background: #f39c12; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold;">Опублікувати відгук</button>
+    </form>
+
+    <p id="thank-you-message" style="display: none; color: #27ae60; text-align: center; margin-top: 15px; font-weight: bold;">
+        ✅ Дякуємо! Ваш відгук надіслано модератору. Він з'явиться на сайті найближчим часом.
+    </p>
+</section>
+
+<script>
+    // Скрипт для показу повідомлення без перезавантаження сторінки (якщо Formspree дозволить)
+    const form = document.getElementById('review-form');
+    const message = document.getElementById('thank-you-message');
+
+    form.onsubmit = function() {
+        // Показуємо напис одразу після кліку
+        message.style.display = 'block';
+        form.style.opacity = '0.5';
+        form.querySelector('button').disabled = true;
+        form.querySelector('button').innerText = 'Відправляємо...';
+    };
+</script>
+                </div>
+            </section>
+        <section class="reviews-section" style="margin-top: 50px; padding: 40px 20px; background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">Перші відгуки користувачів бета-версії</h2>
+    
+    <div class="reviews-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        
+        <div class="review-card" style="padding: 20px; border-radius: 15px; background: #f8f9fa; border: 1px solid #eee;">
+            <div class="stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐</div>
+            <p style="font-style: italic; color: #555;">"Завжди був худорлявим, ніяк не міг набрати. Завдяки розрахованому профіциту в SmartDiet нарешті зрушив з місця. За місяць +3 кг, і це переважно м'язи. Меню дуже ситне!""</p>
+            <p style="margin-top: 15px; font-weight: bold; color: #2c3e50;">— Максим, 22 роки</p>
         </div>
-    </main>
 
+        <div class="review-card" style="padding: 20px; border-radius: 15px; background: #f8f9fa; border: 1px solid #eee;">
+            <div class="stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+            <p style="font-style: italic; color: #555;">"Дуже круто, що є готові рецепти. Раніше просто їв усе підряд, а тут все збалансовано. Силові показники в залі виросли, енергії море. Рекомендую план MASS."</p>
+            <p style="margin-top: 15px; font-weight: bold; color: #2c3e50;">— Олексій, 29 років</p>
+        </div>
+
+        <div class="review-card" style="padding: 20px; border-radius: 15px; background: #eef9f1; border: 1px solid #27ae60;">
+            <div class="stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+            <p style="font-style: italic; color: #2c3e50; font-weight: 500;">"Взяла програму для набору, бо після хвороби сильно схудла. Дуже допомогло повернути форму без шкоди для здоров'я. Смачні перекуси та чіткий графік прийомів їжі."</p>
+            <p style="margin-top: 15px; font-weight: bold; color: #27ae60;">—  Олена, 31 рік (PRO-клієнт)</p>
+        </div>
+
+    </div>
+</section>
+</div>
+    </main>
+    <script src="script.js"></script>
+	<script>
+function showDevMessage() {
+  window.open("https://forms.gle/QGMtsS3aUEcCYRpV7", "_blank");
+}
+</script>
 </body>
 </html>
+<footer style="text-align: center; padding: 40px 20px; background: #2c3e50; color: white; margin-top: 40px;">
+    <div style="margin-bottom: 20px;">
+        <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Приєднуйтесь до нашої спільноти:</p>
+        
+        <a href="ВАШЕ_ПОСИЛАННЯ" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="ВАШЕ_ПОСИЛАННЯ" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-telegram"></i>
+        </a>
+        
+        <a href="ВАШЕ_ПОСИЛАННЯ" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.1); margin: 20px auto;">
+
+    <p>&copy; 2024 SmartDiet. Всі права захищені.</p>
+    <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto;">
+        Перед початком будь-якої дієти проконсультуйтеся з лікарем. Матеріали сайту мають інформаційний характер.
+    </p>
+</footer>
