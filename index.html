@@ -1,24 +1,82 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HZZRFP01R7');
+    </script>
 
-  gtag('config', 'G-HZZRFP01R7');
-</script>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="yUEhQ4gc4F38slNbabB3xoVANOeG0erZrjBqyKrAsKI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Знайдіть ідеальний план харчування для схуднення, набору маси або при діабеті. Безкоштовний калькулятор калорій та професійні раціони SmartDiet.">
-    <meta name="description" content="Безкоштовний калькулятор калорій та БЖВ. Отримайте персональний план харчування для схуднення, набору маси або контролю діабету.">
+    
+    <meta name="description" content="Безкоштовний калькулятор калорій та БЖВ. Отримайте персональний план харчування для схуднення, набору маси або контролю діабету від SmartDiet.">
     <title>SmartDiet — Персональні плани харчування та розрахунок калорій</title>
+
+    <meta property="og:title" content="SmartDiet — Твій персональний калькулятор здоров'я">
+    <meta property="og:description" content="Розрахуйте норму калорій та отримайте меню для діабету або схуднення за 1 хвилину.">
+    <meta property="og:image" content="https://kharkiv2023.github.io/vibediet-site1/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+
+    <link rel="canonical" href="https://kharkiv2023.github.io/vibediet-site1/index.html">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header.top-header {
+            background: #2c7a7b;
+            color: #fff;
+        }
+        section {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c7a7b;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #e6f2f2;
+        }
+        .infographic {
+            background: #edf7f7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
 
@@ -30,7 +88,17 @@
             
             <nav class="desktop-nav" id="side-nav">
                 <a href="index.html" class="active">Головна</a>
-                <a href="diabetes.html">Діабет</a>
+                
+                <div class="dropdown">
+                    <a href="diabetes.html" class="dropdown-toggle">Діабет <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="diabetes.html">Дієта при цукровому діабеті 2 типу</a>
+                        <a href="diabetes-menu.html">Меню при діабеті 2 типу</a>
+                        <a href="glycemic-index.html">Глікемічний індекс таблиця</a>
+                        <a href="diabetes-forbidden.html">Що не можна їсти при діабеті</a>
+                        <a href="table-9-menu.html">Стіл №9 меню</a>
+                    </div>
+                </div>
                 <a href="lose.html">Схуднення</a>
                 <a href="gain.html">Набір маси</a>
                 <a href="maintain.html">Підтримка форми</a> 
@@ -98,32 +166,50 @@
                         <input type="radio" name="goal" value="maintain" id="goal-maintain">
                         <label for="goal-maintain" class="goal-label">⚖️ Підтримка форми</label>
                     </div>
-	
                 </div>
 
                 <button type="submit" class="main-btn">
                     <i class="fas fa-calculator"></i> Розрахувати план
                 </button>
             </form>
-<div id="result" class="hidden">
-    <h3>Ваш результат:</h3>
-    <p>Калорії: <span id="calories-out">0</span> ккал</p>
-    <div class="macros">
-        Б: <span id="p-out">0</span>г | Ж: <span id="f-out">0</span>г | В: <span id="c-out">0</span>г
-    </div>
-    <p id="advice"></p>
-    <button id="cta-btn" class="main-btn">Отримати персональні рекомендації →</button>
-</div>
-           
+
+            <div id="result" class="hidden">
+                <h3>Ваш результат:</h3>
+                <p>Калорії: <span id="calories-out">0</span> ккал</p>
+                <div class="macros">
+                    Б: <span id="p-out">0</span>г | Ж: <span id="f-out">0</span>г | В: <span id="c-out">0</span>г
+                </div>
+                <p id="advice"></p>
+                <button id="cta-btn" class="main-btn">Отримати персональні рекомендації →</button>
+            </div>
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 40px;">
-        <p>&copy; 2024 SmartDiet. Всі права захищені.</p>
-        <p style="font-size: 12px; opacity: 0.7;">Перед початком будь-якої дієти проконсультуйтеся з лікарем.</p>
+    <footer style="text-align: center; padding: 40px 20px; background: #2c3e50; color: white; margin-top: 40px;">
+        <div style="margin-bottom: 20px;">
+            <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Приєднуйтесь до нашої спільноти:</p>
+            
+            <a href="https://www.instagram.com/smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://t.me/smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
+                <i class="fab fa-telegram"></i>
+            </a>
+            
+            <a href="https://www.tiktok.com/@smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+
+        <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.1); margin: 20px auto;">
+
+        <p>&copy; 2026 SmartDiet. Всі права захищені.</p>
+        <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto;">
+            Перед початком будь-якої дієти проконсультуйтеся з лікарем. Матеріали сайту мають інформаційний характер.
+        </p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
