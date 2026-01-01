@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HZZRFP01R7');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HZZRFP01R7');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Ефективна програма харчування для набору м'язової маси. Рецепти, поради щодо профіциту калорій та готові раціони.">
     <title>Як набрати м'язову масу: план харчування та меню | SmartDiet</title>
+    <meta name="description" content="Ефективна програма харчування для набору м'язової маси. Рецепти, поради щодо профіциту калорій та готові раціони.">
+    
+    <meta property="og:title" content="SmartDiet - Набір м'язової маси">
+    <meta property="og:description" content="Здоровий профіцит калорій та білкове меню для росту м'язів.">
+    <meta property="og:image" content="https://kharkiv2023.github.io/vibediet-site1/assets/og-image-gain.jpg">
+    
+    <link rel="canonical" href="https://kharkiv2023.github.io/vibediet-site1/gain.html">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
@@ -25,9 +29,18 @@
             <div class="logo"><i class="fa-solid fa-heart-pulse"></i> SmartDiet</div>
             <nav class="desktop-nav" id="side-nav">
                 <a href="index.html">Головна</a>
-                <a href="diabetes.html">Діабет</a>
+                <div class="dropdown">
+                    <a href="diabetes.html" class="dropdown-toggle">Діабет <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="diabetes.html">Дієта при цукровому діабеті 2 типу</a>
+                        <a href="diabetes-menu.html">Меню при діабеті 2 типу</a>
+                        <a href="glycemic-index.html">Глікемічний індекс таблиця</a>
+                        <a href="diabetes-forbidden.html">Що не можна їсти при діабеті</a>
+                        <a href="table-9-menu.html">Стіл №9 меню</a>
+                    </div>
+                </div>
                 <a href="lose.html">Схуднення</a>
-                <a href="gain.html" class="active">Набір маси</a>
+                <a href="gain.html">Набір маси</a>
                 <a href="maintain.html">Підтримка форми</a> 
             </nav>
             <div class="menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></div>
@@ -38,30 +51,34 @@
         <div class="container" style="max-width: 900px;">
             <a href="index.html" class="back-link">← Назад до калькулятора</a>
 
-            <header style="margin-bottom: 30px; border-bottom: 2px solid #f39c12; padding-bottom: 20px;">
-                <h1>Програма набору м'язової маси</h1>
-                <p style="font-style: italic; color: #7f8c8d;">Здоровий профіцит калорій та ріст м'язів</p>
+            <header style="text-align: center; margin-bottom: 40px; border-bottom: 2px solid #2c7a7b; padding-bottom: 25px;">
+                <div class="custom-header">
+                    <h1 style="margin: 0; color: white; font-size: 28px;">Програма набору м'язової маси</h1>
+                    <p style="margin: 12px 0 0 0; font-style: italic; color: rgba(255,255,255,0.85); font-size: 15px;">
+                        Оновлено: січень 2026
+                    </p>
+                </div>
             </header>
 
             <section>
                 <div style="display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 280px; background: #fff9eb; padding: 20px; border-radius: 10px; border-top: 5px solid #f39c12;">
-                        <h3 style="color: #e67e22;">💪 Основа раціону:</h3>
+                        <h3 style="color: #e67e22;"><i class="fa-solid fa-dumbbell"></i> Основа раціону (можна):</h3>
                         <ul style="list-style: none; margin-top: 10px; line-height: 1.8;">
-                            <li>• Яловичина, яйця, горіхи</li>
-                            <li>• Складні вуглеводи (рис, макарони)</li>
-                            <li>• Корисні жири (авокадо, олія)</li>
-                            <li>• Молочні продукти високої жирності</li>
+                            <li>• Яловичина, яйця, горіхи, жирна риба</li>
+                            <li>• Складні вуглеводи (рис, макарони, гречка)</li>
+                            <li>• Корисні жири (авокадо, оливкова олія)</li>
+                            <li>• Молочні продукти (сир, йогурт, молоко)</li>
                         </ul>
                     </div>
 
-                    <div style="flex: 1; min-width: 280px; background: #eef9f1; padding: 20px; border-radius: 10px; border-top: 5px solid #3498db;">
-                        <h3 style="color: #3498db;">📈 Поради:</h3>
+                    <div style="flex: 1; min-width: 280px; background: #fdf2f2; padding: 20px; border-radius: 10px; border-top: 5px solid #e74c3c;">
+                        <h3 style="color: #e74c3c;"><i class="fa-solid fa-triangle-exclamation"></i> Слід обмежити:</h3>
                         <ul style="list-style: none; margin-top: 10px; line-height: 1.8;">
-                            <li>• Їжте 5-6 разів на день</li>
-                            <li>• Пийте багато води</li>
-                            <li>• Обов'язково тренуйтеся з вагою</li>
-                            <li>• Спіть не менше 8 годин</li>
+                            <li>• "Порожні" калорії (цукерки, газировка)</li>
+                            <li>• Трансжири та надлишок фастфуду</li>
+                            <li>• Алкогольні напої</li>
+                            <li>• Ковбасні вироби низької якості</li>
                         </ul>
                     </div>
                 </div>
@@ -72,126 +89,115 @@
                 <div class="menu-offer-section">
                     <div class="offer-card free-card">
                         <h3>🌱 Пробний день</h3>
-                        <p style="color: #7f8c8d; margin-bottom: 15px;">Безкоштовно</p>
+                        <p style="color: #7f8c8d; margin-bottom: 15px;">Безкоштовно (PDF)</p>
                         <ul style="text-align: left; margin-bottom: 20px; list-style: none;">
-                            <li>✅ <strong>Сніданок:</strong> Вівсянка на молоці з бананом</li>
-                            <li>✅ <strong>Обід:</strong> Паста з яловичиною та сиром</li>
-                            <li>✅ <strong>Вечеря:</strong> Рис з лососем або куркою</li>
+                            <li>✅ <strong>Сніданок:</strong> Вівсянка на молоці з бананом та горіхами</li>
+                            <li>✅ <strong>Обід:</strong> Паста з яловичиною та тертим сиром</li>
+                            <li>✅ <strong>Вечеря:</strong> Рис з лососем або великою порцією курки</li>
                         </ul>
                         <a href="gain-free-day.pdf" target="_blank" class="buy-btn" style="background: #95a5a6; text-decoration: none; display: block; text-align: center;">
-                            <i class="fas fa-file-pdf"></i> Отримати рекомендації
+                           <i class="fas fa-file-pdf"></i> Отримати рекомендації
                         </a>
                     </div>
 
                     <div class="offer-card premium-card">
                         <div class="premium-badge" style="background: #f39c12;">MASS</div>
                         <h3>👑 Максимум (30 днів)</h3>
-                        <p>Ріст м'язів + Сила</p>
+                        <p>Ріст м'язів + Збільшення сили</p>
                         <div class="price">7 днів—79 грн <br>30 днів—149 грн</div>
                         <ul style="text-align: left; margin-bottom: 20px; list-style: none;">
                             <li>🔥 <strong>План набору 3000+ ккал</strong></li>
-                            <li>🥩 <strong>Білкове меню</strong></li>
-                            <li>🏋️ <strong>Програма тренувань</strong> у залі</li>
+                            <li>🥩 <strong>Білкове меню на кожен день</strong></li>
+                            <li>🏋️ <strong>Програма тренувань у залі</strong></li>
                         </ul>
-                        <a href="#" class="buy-btn" onclick="showDevMessage(); return false;">Хочу схуднути</a>
+                        <a href="#" class="buy-btn" onclick="showDevMessage(); return false;" style="background: #f39c12;">Почати набір</a>
                     </div>
-					<section class="add-review-section" style="margin-top: 50px; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-    <h3 style="text-align: center; margin-bottom: 20px;">Залишити свій відгук</h3>
-    
-    <form action="https://formspree.io/f/xaqylgor" method="POST" id="review-form" style="display: flex; flex-direction: column; gap: 15px;">
-        
-        <input type="text" name="Ім'я" placeholder="Ваше ім'я" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;">
-        
-        <select name="Оцінка" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;">
-            <option value="5">⭐⭐⭐⭐⭐ (Відмінно)</option>
-            <option value="4">⭐⭐⭐⭐ (Добре)</option>
-            <option value="3">⭐⭐⭐ (Задовільно)</option>
-        </select>
-
-        <textarea name="Відгук" rows="4" placeholder="Ваш результат або запитання..." required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"></textarea>
-        
-        <input type="hidden" name="_next" value="https://kharkiv2023.github.io/vibediet-site1/gain.html">
-        
-        <button type="submit" id="submit-btn" class="main-btn" style="background: #f39c12; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold;">Опублікувати відгук</button>
-    </form>
-
-    <p id="thank-you-message" style="display: none; color: #27ae60; text-align: center; margin-top: 15px; font-weight: bold;">
-        ✅ Дякуємо! Ваш відгук надіслано модератору. Він з'явиться на сайті найближчим часом.
-    </p>
-</section>
-
-<script>
-    // Скрипт для показу повідомлення без перезавантаження сторінки (якщо Formspree дозволить)
-    const form = document.getElementById('review-form');
-    const message = document.getElementById('thank-you-message');
-
-    form.onsubmit = function() {
-        // Показуємо напис одразу після кліку
-        message.style.display = 'block';
-        form.style.opacity = '0.5';
-        form.querySelector('button').disabled = true;
-        form.querySelector('button').innerText = 'Відправляємо...';
-    };
-</script>
                 </div>
             </section>
-        <section class="reviews-section" style="margin-top: 50px; padding: 40px 20px; background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-    <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">Перші відгуки користувачів бета-версії</h2>
-    
-    <div class="reviews-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-        
-        <div class="review-card" style="padding: 20px; border-radius: 15px; background: #f8f9fa; border: 1px solid #eee;">
-            <div class="stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐</div>
-            <p style="font-style: italic; color: #555;">"Завжди був худорлявим, ніяк не міг набрати. Завдяки розрахованому профіциту в SmartDiet нарешті зрушив з місця. За місяць +3 кг, і це переважно м'язи. Меню дуже ситне!""</p>
-            <p style="margin-top: 15px; font-weight: bold; color: #2c3e50;">— Максим, 22 роки</p>
-        </div>
 
-        <div class="review-card" style="padding: 20px; border-radius: 15px; background: #f8f9fa; border: 1px solid #eee;">
-            <div class="stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
-            <p style="font-style: italic; color: #555;">"Дуже круто, що є готові рецепти. Раніше просто їв усе підряд, а тут все збалансовано. Силові показники в залі виросли, енергії море. Рекомендую план MASS."</p>
-            <p style="margin-top: 15px; font-weight: bold; color: #2c3e50;">— Олексій, 29 років</p>
-        </div>
+            <section class="add-review-section" style="margin-top: 50px; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h3 style="text-align: center; margin-bottom: 20px;">Залишити свій відгук</h3>
+                <form action="https://formspree.io/f/xaqylgor" method="POST" id="review-form" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" name="_gotcha" style="display:none"> 
+                    <input type="text" name="Ім'я" placeholder="Ваше ім'я" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;">
+                    <select name="Оцінка" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;">
+                        <option value="5">⭐⭐⭐⭐⭐ (Відмінно)</option>
+                        <option value="4">⭐⭐⭐⭐ (Добре)</option>
+                        <option value="3">⭐⭐⭐ (Задовільно)</option>
+                    </select>
+                    <textarea name="Відгук" rows="4" placeholder="Ваш результат або запитання..." required maxlength="500" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"></textarea>
+                    <input type="hidden" name="_next" value="https://kharkiv2023.github.io/vibediet-site1/gain.html">
+                    <button type="submit" id="submit-btn" class="main-btn" style="background: #f39c12; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold;">Опублікувати відгук</button>
+                </form>
+                <p id="thank-you-message" style="display: none; color: #27ae60; text-align: center; margin-top: 15px; font-weight: bold;">
+                    ✅ Дякуємо! Ваш відгук надіслано модератору.
+                </p>
+            </section>
 
-        <div class="review-card" style="padding: 20px; border-radius: 15px; background: #eef9f1; border: 1px solid #27ae60;">
-            <div class="stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
-            <p style="font-style: italic; color: #2c3e50; font-weight: 500;">"Взяла програму для набору, бо після хвороби сильно схудла. Дуже допомогло повернути форму без шкоди для здоров'я. Смачні перекуси та чіткий графік прийомів їжі."</p>
-            <p style="margin-top: 15px; font-weight: bold; color: #27ae60;">—  Олена, 31 рік (PRO-клієнт)</p>
-        </div>
+            <section class="reviews-section">
+                <h2 style="text-align: center; margin: 40px 0 30px;">Відгуки користувачів</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-stars" style="color: #f1c40f;">⭐⭐⭐⭐</div>
+                        <p>"Завжди був худорлявим. Завдяки розрахованому профіциту нарешті зрушив з місця. За місяць +3 кг, меню дуже ситне!"</p>
+                        <span class="review-author" style="font-weight: bold;">— Максим, 22 роки</span>
+                    </div>
 
-    </div>
-</section>
-</div>
+                    <div class="review-card">
+                        <div class="review-stars" style="color: #f1c40f;">⭐⭐⭐⭐⭐</div>
+                        <p>"Дуже круто, що є готові рецепти. Раніше просто їв усе підряд, а тут все збалансовано. Силові показники в залі виросли."</p>
+                        <span class="review-author" style="font-weight: bold;">— Олексій, 29 років</span>
+                    </div>
+
+                    <div class="review-card" style="border: 1px solid #27ae60; background: #eef9f1;">
+                        <div class="review-stars" style="color: #f1c40f;">⭐⭐⭐⭐⭐</div>
+                        <p>"Взяла програму після хвороби, щоб повернути форму. Дуже допомогло повернути вагу без шкоди для здоров'я."</p>
+                        <span class="review-author" style="font-weight: bold; color: #27ae60;">— Олена, 31 рік (PRO)</span>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
+
+      <footer style="text-align: center; padding: 40px 20px; background: #2c3e50; color: white; margin-top: 40px;">
+        <div style="margin-bottom: 20px;">
+            <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Приєднуйтесь до нашої спільноти:</p>
+            
+            <a href="https://www.instagram.com/smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://t.me/smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
+                <i class="fab fa-telegram"></i>
+            </a>
+            
+            <a href="https://www.tiktok.com/@smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+
+        <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.1); margin: 20px auto;">
+
+        <p>&copy; 2026 SmartDiet. Всі права захищені.</p>
+        <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto;">
+            Перед початком будь-якої дієти проконсультуйтеся з лікарем. Матеріали сайту мають інформаційний характер.
+        </p>
+    </footer>
+
     <script src="script.js"></script>
-	<script>
-function showDevMessage() {
-  window.open("https://forms.gle/QGMtsS3aUEcCYRpV7", "_blank");
-}
-</script>
+    <script>
+        function showDevMessage() { window.open("https://forms.gle/QGMtsS3aUEcCYRpV7", "_blank"); }
+        
+        const reviewForm = document.getElementById('review-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        const submitBtn = document.getElementById('submit-btn');
+
+        reviewForm.onsubmit = function() {
+            thankYouMessage.style.display = 'block';
+            reviewForm.style.opacity = '0.5';
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Відправляємо...';
+        };
+    </script>
 </body>
 </html>
-<footer style="text-align: center; padding: 40px 20px; background: #2c3e50; color: white; margin-top: 40px;">
-    <div style="margin-bottom: 20px;">
-        <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Приєднуйтесь до нашої спільноти:</p>
-        
-        <a href="ВАШЕ_ПОСИЛАННЯ" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
-            <i class="fab fa-instagram"></i>
-        </a>
-        
-        <a href="ВАШЕ_ПОСИЛАННЯ" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
-            <i class="fab fa-telegram"></i>
-        </a>
-        
-        <a href="ВАШЕ_ПОСИЛАННЯ" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
-            <i class="fab fa-tiktok"></i>
-        </a>
-    </div>
-
-    <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.1); margin: 20px auto;">
-
-    <p>&copy; 2024 SmartDiet. Всі права захищені.</p>
-    <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto;">
-        Перед початком будь-якої дієти проконсультуйтеся з лікарем. Матеріали сайту мають інформаційний характер.
-    </p>
-
-</footer>
