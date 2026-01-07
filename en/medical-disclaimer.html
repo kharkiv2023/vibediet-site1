@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HZZRFP01R7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Disclaimer — SmartDiet</title>
+    <meta name="description" content="Important warning regarding medical information on the SmartDiet website.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-container">
+            <div class="logo"><i class="fa-solid fa-heart-pulse"></i> SmartDiet</div>
+            <nav class="desktop-nav" id="side-nav">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="diabetes.html" class="dropdown-toggle">Diabetes <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="diabetes.html">Diet for Type 2 Diabetes</a>
+                        <a href="diabetes-menu.html">Type 2 Diabetes Menu</a>
+                        <a href="glycemic-index.html">Glycemic Index Table</a>
+                        <a href="diabetes-forbidden.html">What Not to Eat with Diabetes</a>
+                        <a href="table-9-menu.html">Table №9 Menu</a>
+                    </div>
+                </div>
+                <a href="lose.html">Weight Loss</a>
+                <a href="gain.html">Muscle Gain</a>
+                <a href="maintain.html">Maintain Shape</a>
+                <div class="lang-select">
+                    <a href="javascript:void(0)" onclick="changeLanguage('')">UA</a> |
+                    <a href="javascript:void(0)" onclick="changeLanguage('en')" style="font-weight: bold;">EN</a> |
+                    <a href="javascript:void(0)" onclick="changeLanguage('fr')">FR</a>
+                </div>
+            </nav>
+            <div class="menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+    <main>
+        <section class="content-area" style="max-width: 800px; margin: 50px auto; padding: 20px;">
+            <h1>Medical Disclaimer</h1>
+            <p>The information on the SmartDiet website is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+            <h2>Important Warnings</h2>
+            <ul>
+                <li>Before starting any diet or nutrition program, always consult a doctor, especially if you have diabetes, chronic conditions, or are taking medications.</li>
+                <li>Menus and recommendations are based on general principles (e.g., Diet №9), but do not account for individual health specifics.</li>
+                <li>SmartDiet is not responsible for any consequences arising from the use of information on the site.</li>
+                <li>If you experience any worsening of your condition, seek medical attention immediately.</li>
+            </ul>
+            <p>We recommend using our website as a supplement to consultations with healthcare professionals.</p>
+        </section>
+    </main>
+    <footer>
+        <!-- Your standard footer -->
+        <p>&copy; 2026 SmartDiet. All rights reserved.</p>
+        <a href="about.html">About Us</a> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> | <a href="medical-disclaimer.html">Medical Disclaimer</a> | <a href="contact.html">Contact</a>
+    <script>
+function changeLanguage(lang) {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts.pop() || "index.html";
+  
+    let newPath;
+    if (lang === "") {
+        newPath = "../" + currentPage;
+    } else {
+        newPath = "../" + lang + "/" + currentPage;
+    }
+  
+    window.location.href = newPath;
+}
+</script>
+	</footer>
+    <script src="script.js"></script>
+</body>
+</html>

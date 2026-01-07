@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+<script>
+(function() {
+    // 1. Define browser language
+    var userLang = navigator.language || navigator.userLanguage;
+    var langCode = userLang.substring(0, 2).toLowerCase();
+   
+    // 2. Check if we already redirected (to prevent infinite loop)
+    var alreadyRedirected = sessionStorage.getItem('lang_redirected');
+   
+    // 3. Get current path
+    var currentPath = window.location.pathname;
+    // Check if user is NOT already in language folder /en/ or /fr/
+    var isInLangFolder = currentPath.startsWith('/en/') || currentPath.startsWith('/fr/');
+    if (!alreadyRedirected && !isInLangFolder) {
+        sessionStorage.setItem('lang_redirected', 'true');
+       
+        if (langCode === 'fr') {
+            window.location.href = '/fr' + (currentPath === '/' ? '/index.html' : currentPath);
+        } else if (langCode === 'en') {
+            window.location.href = '/en' + (currentPath === '/' ? '/index.html' : currentPath);
+        }
+    }
+})();
+</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HZZRFP01R7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="yUEhQ4gc4F38slNbabB3xoVANOeG0erZrjBqyKrAsKI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <meta name="description" content="Free calorie and macronutrient calculator. Get a personalized nutrition plan for weight loss, muscle gain or diabetes management from SmartDiet.">
+    <title>SmartDiet — Personalized Nutrition Plans & Calorie Calculator</title>
+    <meta property="og:title" content="SmartDiet — Your Personal Health Calculator">
+    <meta property="og:description" content="Calculate your calorie needs and get a daily menu for diabetes or weight loss in just 1 minute.">
+    <meta property="og:image" content="https://smartdiet.com.ua/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/index.html">
+<link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/index.html">
+<link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/index.html">
+<link rel="alternate" hreflang="x-default" href="https://smartdiet.com.ua/index.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+   
+   
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i> SmartDiet
+            </div>
+           
+            <nav class="desktop-nav" id="side-nav">
+                <a href="index.html" class="active">Home</a>
+               
+                <div class="dropdown">
+                    <a href="diabetes.html" class="dropdown-toggle">Diabetes <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="diabetes.html">Diet for Type 2 Diabetes</a>
+                        <a href="diabetes-menu.html">Type 2 Diabetes Menu</a>
+                        <a href="glycemic-index.html">Glycemic Index Table</a>
+                        <a href="diabetes-forbidden.html">Foods to Avoid with Diabetes</a>
+                        <a href="table-9-menu.html">Table №9 Menu</a>
+                    </div>
+                </div>
+                <a href="lose.html">Weight Loss</a>
+                <a href="gain.html">Muscle Gain</a>
+                <a href="maintain.html">Maintain Shape</a>
+<div class="lang-select" style="display: inline-block; margin-left: 15px;">
+    <a href="javascript:void(0)" onclick="changeLanguage('')">UA</a> | 
+    <a href="javascript:void(0)" onclick="changeLanguage('en')" style="font-weight: bold;">EN</a> | 
+    <a href="javascript:void(0)" onclick="changeLanguage('fr')">FR</a>
+</div>
+            </nav>
+            <div class="menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+<section class="hero-home">
+    <div class="hero-glass-card">
+        <h1>Your Personal Dietitian Always Nearby 🥗</h1>
+       
+        <div class="hero-subtitle">
+            <div>✅ Free Calorie Calculation</div>
+            <div>✅ Ready Daily Menus</div>
+            <div>✅ No Hunger or Extreme Restrictions</div>
+        </div>
+       
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="stat-icon">👥</span>
+                <strong>12,500+</strong>
+                <span>users</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">📉</span>
+                <strong>-87,000 kg</strong>
+                <span>lost together</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">⭐</span>
+                <strong>4.8/5</strong>
+                <span>rating</span>
+            </div>
+        </div>
+       
+        <a href="#calc-form" class="cta-scroll">Start Calculation ↓</a>
+    </div>
+</section>
+<style>
+    .local-steps-grid {
+        display: flex; /* row */
+        gap: 20px; /* spacing between steps */
+        justify-content: center; /* center */
+        flex-wrap: wrap; /* stack on mobile */
+        margin-top: 30px;
+    }
+    .local-step {
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05); /* glass effect */
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    .local-step-number {
+        width: 40px;
+        height: 40px;
+        background: #f1c40f; /* golden number color */
+        color: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin: 0 auto 15px; /* center circle */
+    }
+    .local-step h3 {
+        color: #f1c40f !important; /* step title */
+        margin-bottom: 10px;
+    }
+    .local-step p {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 14px;
+    }
+</style>
+<section class="hero-home">
+    <div class="hero-glass-card">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 2rem;">SmartDiet — your assistant in mindful nutrition</h2>
+    <p>SmartDiet is an online platform created for those who want to better understand their nutrition and the impact of food on health. We offer free calorie calculators, macros (proteins, fats, carbohydrates), as well as specialized tools for weight loss, muscle gain, maintaining shape, and controlling type 2 diabetes.</p>
+    <p>All calculations are based on scientifically substantiated formulas (for example, the Mifflin-St Jeor formula for basal metabolism) and recommendations from authoritative organizations, such as the World Health Organization (WHO), the American Diabetes Association, and the traditional therapeutic diet No. 9.</p>
+    <h3>Who is this site for?</h3>
+    <p>Our tools and materials will be useful:</p>
+    <ul style="line-height: 1.8; margin: 20px 0; padding-left: 30px;">
+        <li>To people who strive to lose weight without strict restrictions and maintain the result for a long time</li>
+        <li>To those who exercise and want to gain muscle mass in a healthy way</li>
+        <li>To individuals with type 2 diabetes or prediabetes who are looking for information about glycemic index and safe menus</li>
+        <li>To everyone who just wants to maintain stable weight and good well-being</li>
+    </ul>
+    <h3>Why is it important to correctly calculate calorie content?</h3>
+    <p>Daily calorie needs depend on age, gender, weight, height, and level of physical activity. Excess calories lead to weight gain, and deficit — to its loss. But a sharp deficit or surplus can be harmful to health. Our calculator helps find balance: for example, safe weight loss is a deficit of 300–500 kcal per day, which gives a loss of 0.5–1 kg per week without stress to the body.</p>
+    <h3>Special attention — nutrition in diabetes</h3>
+    <p>In type 2 diabetes, the key is control of blood glucose levels. We provide a complete table of glycemic indices of products, examples of menus with low GI, and recommendations regarding the "healthy plate". Products with low glycemic index (up to 55) cause a slow rise in sugar, which helps avoid sharp spikes and better control the condition.</p>
+    <p>For example, the basis of the diet can be non-starchy vegetables (broccoli, zucchini, leafy greens), whole grains in moderate amounts, lean protein sources (chicken, fish, eggs, cheese), and healthy fats (avocado, nuts, olive oil).</p>
+    <h3>How to use the site?</h3>
+    <p>Everything is simple:</p>
+    <ol style="line-height: 1.8; margin: 20px 0; padding-left: 30px;">
+        <li>Enter your data into the calculator on the main page</li>
+        <li>Choose a goal (weight loss, mass gain, maintenance, or diabetes)</li>
+        <li>Get the recommended daily calorie intake and macros distribution</li>
+        <li>Go to the corresponding section for detailed menus, tables, and PDF materials</li>
+    </ol>
+    <h3>Important disclaimer</h3>
+    <p>All materials on the site are for informational purposes only. They do not replace consultation with a doctor, endocrinologist, or dietitian. Before changing the diet, especially in the presence of chronic diseases, be sure to consult a specialist.</p>
+    <p>We are constantly updating content, adding new materials, and improving tools. If you have suggestions or questions — write to us through the <a href="contact.html">contact page</a>.</p>
+    <p style="text-align: center; margin-top: 40px; font-style: italic;">Healthy nutrition is not a temporary diet, but a way of life. SmartDiet helps make the first step and maintain it every day ❤️</p>
+</div>
+</section>
+<section class="how-it-works">
+    <div class="container-small">
+        <h2 style="text-align: center; color: white; margin-bottom: 40px;">How to Start in 3 Minutes</h2>
+        <div class="local-steps-grid">
+            <div class="local-step">
+                <div class="local-step-number">1</div>
+                <h3>Enter Your Data</h3>
+                <p>Age, weight, height and goal</p>
+            </div>
+            <div class="local-step">
+                <div class="local-step-number">2</div>
+                <h3>Get Your Plan</h3>
+                <p>Calories & macros in seconds</p>
+            </div>
+            <div class="local-step">
+                <div class="local-step-number">3</div>
+                <h3>Achieve Your Goal</h3>
+                <p>Ready daily menus</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <main class="content-area">
+        <div class="container">
+            <h1>Health Calculator</h1>
+            <p class="subtitle">Move the sliders to get instant results</p>
+           
+            <form id="calc-form">
+                <div class="gender-switch">
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="male" checked>
+                        <span class="gender-box">Male</span>
+                    </label>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="female">
+                        <span class="gender-box">Female</span>
+                    </label>
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Age</label>
+                        <span id="age-val" class="slider-value">25</span>
+                    </div>
+                    <input type="range" id="age" min="15" max="100" value="25" class="modern-slider">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Height (cm)</label>
+                        <span id="height-val" class="slider-value">175</span>
+                    </div>
+                    <input type="range" id="height" min="120" max="220" value="175" class="modern-slider">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Weight (kg)</label>
+                        <span id="weight-val" class="slider-value">70</span>
+                    </div>
+                    <input type="range" id="weight" min="40" max="180" value="70" class="modern-slider">
+                </div>
+<div class="activity-container" style="margin: 20px 0;">
+    <label style="display: block; font-weight: bold; margin-bottom: 15px; text-align: center;">Your Activity Level:</label>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+       
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.2" checked style="display:none;">
+            <div class="card-content">🪑 Sedentary</div>
+        </label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.375" style="display:none;">
+            <div class="card-content">🚶 Low</div>
+        </label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.55" style="display:none;">
+            <div class="card-content">🏃 Moderate</div>
+        </label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.725" style="display:none;">
+            <div class="card-content">🏋️ High</div>
+        </label>
+    </div>
+</div>
+                <div class="slider-group" style="margin-bottom: 30px;">
+    <label style="font-size: 20px; font-weight: bold; display: block; margin-bottom: 15px; color: #2c3e50; text-align: center;">Your Goal:</label>
+   
+    <div class="goal-selection" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+       
+        <input type="radio" name="goal" value="lose" id="goal-lose" checked style="display: none;">
+        <label for="goal-lose" class="goal-label">🔥 Weight Loss</label>
+        <input type="radio" name="goal" value="gain" id="goal-gain" style="display: none;">
+        <label for="goal-gain" class="goal-label">💪 Muscle Gain</label>
+        <input type="radio" name="goal" value="diabetes" id="goal-diabetes" style="display: none;">
+        <label for="goal-diabetes" class="goal-label">🩸 Diabetes Control</label>
+        <input type="radio" name="goal" value="maintain" id="goal-maintain" style="display: none;">
+        <label for="goal-maintain" class="goal-label">⚖️ Maintain Weight</label>
+       
+    </div>
+</div>
+                <button type="submit" class="main-btn">
+                    <i class="fas fa-calculator"></i> Calculate Plan
+                </button>
+            </form>
+            <div id="result" class="hidden" style="display: none; background: white; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 40px 20px; margin-top: 30px; text-align: center;">
+   
+    <div style="margin-bottom: 20px;">
+        <span id="res-icon" style="font-size: 80px; display: block;">⚖️</span>
+    </div>
+   
+    <h2 style="font-size: 32px; font-weight: 800; color: #1f2937; margin-bottom: 30px;">Your Result</h2>
+    <div style="background-color: #f0f9ff; border-radius: 20px; padding: 30px; margin-bottom: 25px;">
+        <div style="font-size: 16px; color: #6b7280; margin-bottom: 8px; font-weight: 500;">Daily Calorie Allowance</div>
+        <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px;">
+            <span id="calories-out" style="font-size: 64px; font-weight: 800; color: #0d9488;">2201</span>
+        </div>
+        <div style="font-size: 18px; color: #6b7280; font-weight: 500;">kcal/day</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 30px;">
+        <div style="background-color: #eff6ff; border-radius: 16px; padding: 20px 10px;">
+            <div id="p-out" style="font-size: 28px; font-weight: 800; color: #2563eb;">138g</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Protein</div>
+        </div>
+        <div style="background-color: #fffbeb; border-radius: 16px; padding: 20px 10px;">
+            <div id="f-out" style="font-size: 28px; font-weight: 800; color: #d97706;">61g</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Fats</div>
+        </div>
+        <div style="background-color: #f0fdf4; border-radius: 16px; padding: 20px 10px;">
+            <div id="c-out" style="font-size: 28px; font-weight: 800; color: #16a34a;">275g</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Carbs</div>
+        </div>
+    </div>
+    <div style="margin-bottom: 30px; padding: 0 10px;">
+        <p id="advice" style="font-size: 16px; color: #4b5563; font-weight: 500; line-height: 1.5;">
+            Maintenance calories for stable weight
+        </p>
+    </div>
+    <button id="cta-btn" style="width: 100%; background: linear-gradient(to right, #f97316, #fb923c); color: white; padding: 20px; border: none; border-radius: 16px; font-size: 18px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);">
+        Get Personalized Menu →
+    </button>
+</div>
+    </main>
+<section class="faq-section" style="padding: 40px 20px;">
+    <h2 style="text-align: center; color: #2c7a7b; margin-bottom: 30px;">Frequently Asked Questions</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: flex-start;">
+        
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                🤔 Is it safe to lose 5 kg in a month?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Yes, if you maintain a 400-500 kcal daily deficit. This is a healthy rate recommended by nutritionists.
+            </p>
+        </details>
+
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                💳 Is your calculator free?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Yes, calorie calculation and basic health tips always remain free for our users.
+            </p>
+        </details>
+
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                🥗 Are your menus suitable for vegetarians?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Yes, our nutrition plans include alternative meat-free meal options.
+            </p>
+        </details>
+
+    </div>
+</section>
+<style>
+    /* Remove default browser arrow for clean look */
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+</style>
+<style>
+    .local-benefits-grid {
+        display: flex; /* row */
+        gap: 20px; /* spacing between cards */
+        justify-content: center; /* center */
+        flex-wrap: wrap; /* stack on mobile */
+        margin-top: 30px;
+    }
+    .local-benefit-card {
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: white;
+    }
+    .local-benefit-card h4 {
+        color: #f1c40f !important;
+        margin: 10px 0;
+    }
+</style>
+<section class="benefits-dark">
+    <h3 style="text-align: center; color: white; margin-bottom: 30px;">Why Choose SmartDiet?</h3>
+    <div class="local-benefits-grid">
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🎯</div>
+            <h4>Accuracy</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Calculation using the Mifflin-St Jeor formula</p>
+        </div>
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🥗</div>
+            <h4>Ready Menus</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Nutrition plans for any goal</p>
+        </div>
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🛡️</div>
+            <h4>Safety</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Recommendations based on medical standards</p>
+        </div>
+    </div>
+</section>
+    <footer style="text-align: center; padding: 40px 20px; background: rgba(0, 0, 0, 0.7) !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); color: white; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+    <div style="margin-bottom: 20px;">
+        <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Join our community:</p>
+       
+        <a href="https://www.instagram.com/smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-instagram"></i>
+        </a>
+       
+        <a href="https://t.me/smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-telegram"></i>
+        </a>
+       
+        <a href="https://www.tiktok.com/@smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+    <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.2); margin: 20px auto;">
+    <p style="color: #ffffff; font-weight: bold;">&copy; 2026 SmartDiet. All rights reserved.</p>
+   
+    <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto; color: rgba(255, 255, 255, 0.8);">
+        Consult your doctor before starting any diet. The website materials are for informational purposes only.
+    </p>
+	<a href="about.html">About Us</a> |
+<a href="privacy-policy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Use</a> |
+<a href="medical-disclaimer.html">Medical Disclaimer</a> |
+<a href="contact.html">Contact</a>
+</footer>
+    <script src="script.js"></script>
+<script>
+function changeLanguage(lang) {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts.pop() || "index.html";
+    
+    let newPath;
+    if (lang === "") {
+        // Вихід з папки /en/ до головного файлу UA
+        newPath = "../" + currentPage; 
+    } else {
+        // Перехід до іншої мовної папки, наприклад /fr/
+        newPath = "../" + lang + "/" + currentPage;
+    }
+    
+    window.location.href = newPath;
+}
+</script>
+</body>
+</html>
