@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4605200624706746"
-     crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,8 +15,10 @@
     
     <meta property="og:title" content="SmartDiet - Набір м'язової маси">
     <meta property="og:description" content="Здоровий профіцит калорій та білкове меню для росту м'язів.">
-    <link rel="canonical" href="https://smartdiet.com.ua/">
-    <meta property="og:image" content="https://smartdiet.com.ua/assets/og-image.jpg">
+    <meta property="og:image" content="https://smartdiet.com.ua/assets/og-image-gain.jpg">
+    <meta name="description" content="Онлайн калькулятори харчування, глікемічного індексу та планування раціону. Інформаційні матеріали для контролю ваги та здорового способу життя.">
+
+    <link rel="canonical" href="https://smartdiet.com.ua/gain.html">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
@@ -43,6 +43,11 @@
                 <a href="lose.html">Схуднення</a>
                 <a href="gain.html">Набір маси</a>
                 <a href="maintain.html">Підтримка форми</a> 
+				<div class="lang-select">
+    <a href="javascript:void(0)" onclick="changeLanguage('')">UA</a> | 
+    <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a> | 
+    <a href="javascript:void(0)" onclick="changeLanguage('fr')">FR</a>
+</div>
             </nav>
             <div class="menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></div>
         </div>
@@ -50,7 +55,7 @@
 
     <main class="content-area">
         <div class="container" style="max-width: 900px;">
-            <a href="index.html" class="back-link">← Назад до калькулятора</a>
+            
 
             <header style="text-align: center; margin-bottom: 40px; border-bottom: 2px solid #2c7a7b; padding-bottom: 25px;">
                 <div class="custom-header">
@@ -65,7 +70,7 @@
                 <div style="display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 280px; background: #fff9eb; padding: 20px; border-radius: 10px; border-top: 5px solid #f39c12;">
                         <h3 style="color: #e67e22;"><i class="fa-solid fa-dumbbell"></i> Основа раціону (можна):</h3>
-                        <ul style="list-style: none; margin-top: 10px; line-height: 1.8;">
+                        <ul style="list-style: none; line-height: 1.8; color: #f39c12; font-weight: 600;">
                             <li>• Яловичина, яйця, горіхи, жирна риба</li>
                             <li>• Складні вуглеводи (рис, макарони, гречка)</li>
                             <li>• Корисні жири (авокадо, оливкова олія)</li>
@@ -75,7 +80,7 @@
 
                     <div style="flex: 1; min-width: 280px; background: #fdf2f2; padding: 20px; border-radius: 10px; border-top: 5px solid #e74c3c;">
                         <h3 style="color: #e74c3c;"><i class="fa-solid fa-triangle-exclamation"></i> Слід обмежити:</h3>
-                        <ul style="list-style: none; margin-top: 10px; line-height: 1.8;">
+                        <ul style="list-style: none; line-height: 1.8; color: #e74c3c; font-weight: 600;">
                             <li>• "Порожні" калорії (цукерки, газировка)</li>
                             <li>• Трансжири та надлишок фастфуду</li>
                             <li>• Алкогольні напої</li>
@@ -114,9 +119,10 @@
                         <a href="#" class="buy-btn" onclick="showDevMessage(); return false;" style="background: #f39c12;">Почати набір</a>
                     </div>
                 </div>
+				
             </section>
 
-            <section class="add-review-section" style="margin-top: 50px; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <section class="add-review-section glass-review">
                 <h3 style="text-align: center; margin-bottom: 20px;">Залишити свій відгук</h3>
                 <form action="https://formspree.io/f/xaqylgor" method="POST" id="review-form" style="display: flex; flex-direction: column; gap: 15px;">
                     <input type="text" name="_gotcha" style="display:none"> 
@@ -135,72 +141,70 @@
                 </p>
             </section>
 
-            <section class="reviews-section">
-                <h2 style="text-align: center; margin: 40px 0 30px;">Відгуки користувачів</h2>
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <div class="review-stars" style="color: #f1c40f;">⭐⭐⭐⭐</div>
-                        <p>"Завжди був худорлявим. Завдяки розрахованому профіциту нарешті зрушив з місця. За місяць +3 кг, меню дуже ситне!"</p>
-                        <span class="review-author" style="font-weight: bold;">— Максим, 22 роки</span>
-                    </div>
+            <section class="reviews-section" style="margin-top: 50px; width: 100%;">
+    <h2 style="text-align: center; margin-bottom: 30px; color: #ffffff;">Відгуки користувачів</h2>
+    
+    <div class="reviews-grid" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 1100px; margin: 0 auto;">
+        
+        <div class="review-card" style="flex: 1; min-width: 280px; max-width: 350px; padding: 25px; border-radius: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); text-align: left;">
+            <div class="review-stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐</div>
+            <p style="font-style: italic; color: #ffffff; line-height: 1.6;">"Завжди був худорлявим. Завдяки розрахованому профіциту нарешті зрушив з місця. За місяць +3 кг, меню дуже ситне!"</p>
+            <span class="review-author" style="font-weight: bold; color: #f1c40f; display: block; margin-top: 15px;">— Максим, 22 роки</span>
+        </div>
 
-                    <div class="review-card">
-                        <div class="review-stars" style="color: #f1c40f;">⭐⭐⭐⭐⭐</div>
-                        <p>"Дуже круто, що є готові рецепти. Раніше просто їв усе підряд, а тут все збалансовано. Силові показники в залі виросли."</p>
-                        <span class="review-author" style="font-weight: bold;">— Олексій, 29 років</span>
-                    </div>
+        <div class="review-card" style="flex: 1; min-width: 280px; max-width: 350px; padding: 25px; border-radius: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); text-align: left;">
+            <div class="review-stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+            <p style="font-style: italic; color: #ffffff; line-height: 1.6;">"Дуже круто, що є готові рецепти. Раніше просто їв усе підряд, а тут все збалансовано. Силові показники в залі виросли."</p>
+            <span class="review-author" style="font-weight: bold; color: #f1c40f; display: block; margin-top: 15px;">— Олексій, 29 років</span>
+        </div>
 
-                    <div class="review-card" style="border: 1px solid #27ae60; background: #eef9f1;">
-                        <div class="review-stars" style="color: #f1c40f;">⭐⭐⭐⭐⭐</div>
-                        <p>"Взяла програму після хвороби, щоб повернути форму. Дуже допомогло повернути вагу без шкоди для здоров'я."</p>
-                        <span class="review-author" style="font-weight: bold; color: #27ae60;">— Олена, 31 рік (PRO)</span>
-                    </div>
-                </div>
-            </section>
+        <div class="review-card" style="flex: 1; min-width: 280px; max-width: 350px; padding: 25px; border-radius: 15px; background: rgba(39, 174, 96, 0.1); border: 1px solid #27ae60; text-align: left;">
+            <div class="review-stars" style="color: #f1c40f; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+            <p style="font-style: italic; color: #ffffff; line-height: 1.6;">"Взяла програму після хвороби, щоб повернути форму. Дуже допомогло повернути вагу без шкоди для здоров'я."</p>
+            <span class="review-author" style="font-weight: bold; color: #27ae60; display: block; margin-top: 15px;">— Олена, 31 рік (PRO)</span>
+        </div>
+
+    </div>
+</section>
         </div>
     </main>
 
-      <footer style="text-align: center; padding: 40px 20px; background: #2c3e50; color: white; margin-top: 40px;">
-        <div style="margin-bottom: 20px;">
-            <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Приєднуйтесь до нашої спільноти:</p>
-            
-            <a href="https://www.instagram.com/smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
-                <i class="fab fa-instagram"></i>
-            </a>
-            
-            <a href="https://t.me/smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
-                <i class="fab fa-telegram"></i>
-            </a>
-            
-            <a href="https://www.tiktok.com/@smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
-                <i class="fab fa-tiktok"></i>
-            </a>
-        </div>
+      <footer>
+    <div style="margin-bottom: 20px;">
+        <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Приєднуйтесь до нашої спільноти:</p>
+        
+        <a href="https://www.instagram.com/smartdiet_ua" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/smartdiet_ua" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://www.tiktok.com/@smartdiet_ua" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
 
-        <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.1); margin: 20px auto;">
+    <hr>
 
-        <p>&copy; 2026 SmartDiet. Всі права захищені.</p>
-        <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto;">
-            Перед початком будь-якої дієти проконсультуйтеся з лікарем. Матеріали сайту мають інформаційний характер.
-        </p>
-    </footer>
+    <p>&copy; 2026 SmartDiet. Всі права захищені.</p>
+    <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto;">
+        Перед початком будь-якої дієти проконсультуйтеся з лікарем. Матеріали сайту мають інформаційний характер.
+    </p>
+	 <a href="about.html">Про нас</a> |
+  <a href="privacy-policy.html">Політика конфіденційності</a> |
+  <a href="terms.html">Умови використання</a> |
+  <a href="medical-disclaimer.html">Медичне застереження</a> |
+  <a href="contact.html">Контакти</a>
+</footer>
 
     <script src="script.js"></script>
     <script>
-        function showDevMessage() { window.open("https://forms.gle/QGMtsS3aUEcCYRpV7", "_blank"); }
-        
-        const reviewForm = document.getElementById('review-form');
-        const thankYouMessage = document.getElementById('thank-you-message');
-        const submitBtn = document.getElementById('submit-btn');
-
-        reviewForm.onsubmit = function() {
-            thankYouMessage.style.display = 'block';
-            reviewForm.style.opacity = '0.5';
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'Відправляємо...';
-        };
-    </script>
+function changeLanguage(lang) {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts.pop() || "index.html";
+    
+    let newPath;
+    if (lang === "") {
+        newPath = currentPage; // Ми вже тут, нікуди виходити не треба
+    } else {
+        newPath = lang + "/" + currentPage; // Просто заходимо в папку en/ або fr/
+    }
+    window.location.href = newPath;
+}
+</script>
 </body>
-
 </html>
-

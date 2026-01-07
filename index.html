@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4605200624706746"
-     crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+	<script>
+(function() {
+    // 1. Визначаємо мову браузера
+    var userLang = navigator.language || navigator.userLanguage; 
+    var langCode = userLang.substring(0, 2).toLowerCase(); 
+    
+    // 2. Перевіряємо, чи ми вже перенаправляли (щоб не було нескінченного циклу)
+    var alreadyRedirected = sessionStorage.getItem('lang_redirected');
+    
+    // 3. Отримуємо поточний шлях
+    var currentPath = window.location.pathname;
+
+    // Перевіряємо, чи користувач НЕ знаходиться вже в мовній папці /en/ або /fr/
+    var isInLangFolder = currentPath.startsWith('/en/') || currentPath.startsWith('/fr/');
+
+    if (!alreadyRedirected && !isInLangFolder) {
+        sessionStorage.setItem('lang_redirected', 'true');
+        
+        if (langCode === 'fr') {
+            window.location.href = '/fr' + (currentPath === '/' ? '/index.html' : currentPath);
+        } else if (langCode === 'en') {
+            window.location.href = '/en' + (currentPath === '/' ? '/index.html' : currentPath);
+        }
+    }
+})();
+</script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -16,69 +40,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="description" content="Безкоштовний калькулятор калорій та БЖВ. Отримайте персональний план харчування для схуднення, набору маси або контролю діабету від SmartDiet.">
-    <title>SmartDiet — Персональні плани харчування та розрахунок калорій</title>
+    <title>SmartDiet — Калькулятор калорій, меню при діабеті та схудненні</title>
+<meta name="description" content="Онлайн калькулятори харчування, глікемічного індексу та планування раціону. Інформаційні матеріали для контролю ваги та здорового способу життя.">
 
     <meta property="og:title" content="SmartDiet — Твій персональний калькулятор здоров'я">
     <meta property="og:description" content="Розрахуйте норму калорій та отримайте меню для діабету або схуднення за 1 хвилину.">
     <meta property="og:image" content="https://smartdiet.com.ua/assets/og-image.jpg">
     <meta property="og:type" content="website">
 
-    <link rel="canonical" href="https://smartdiet.com.ua/">
+    <link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/index.html">
+<link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/index.html">
+<link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/index.html">
+<link rel="alternate" hreflang="x-default" href="https://smartdiet.com.ua/index.html">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
     
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9;
-            color: #333;
-        }
-        header.top-header {
-            background: #2c7a7b;
-            color: #fff;
-        }
-        section {
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto 20px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #2c7a7b;
-        }
-        ul {
-            list-style: disc;
-            margin-left: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background: #e6f2f2;
-        }
-        .infographic {
-            background: #edf7f7;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -104,6 +83,12 @@
                 <a href="lose.html">Схуднення</a>
                 <a href="gain.html">Набір маси</a>
                 <a href="maintain.html">Підтримка форми</a> 
+				<div class="lang-select" style="display: inline-block; margin-left: 15px;">
+    <div class="lang-select" style="display: inline-block; margin-left: 15px;">
+    <a href="javascript:void(0)" onclick="changeLanguage('')" style="font-weight: bold;">UA</a> | 
+    <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a> | 
+    <a href="javascript:void(0)" onclick="changeLanguage('fr')">FR</a>
+</div>
             </nav>
 
             <div class="menu-btn" id="mobile-menu-btn">
@@ -111,9 +96,182 @@
             </div>
         </div>
     </header>
+<style>
+    .hero-glass-card {
+        /* Напівпрозорий темний фон для кращого контрасту з білим текстом */
+        background: rgba(0, 0, 0, 0.55) !important;
+        /* Розмиття фону додає ефект глибини та преміальності */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        
+        padding: 40px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #ffffff !important;
+        max-width: 850px;
+        margin: 0 auto;
+    }
 
+    /* Робимо заголовки яскравішими (золотистими) */
+    .hero-glass-card h2, 
+    .hero-glass-card h3 {
+        color: #f1c40f !important; 
+        margin-top: 25px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Покращуємо читабельність звичайного тексту */
+    .hero-glass-card p, 
+    .hero-glass-card li {
+        line-height: 1.8;
+        font-size: 1.05rem;
+        opacity: 0.95; /* Майже повністю білий для чіткості */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+</style>
+	<section            class="hero-home">
+    <div class="hero-glass-card">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 2rem;">SmartDiet — ваш помічник у свідомому харчуванні</h2>
+
+    <p>SmartDiet — це онлайн-платформа, створена для тих, хто хоче краще розуміти своє харчування та вплив їжі на здоров'я. Ми пропонуємо безкоштовні калькулятори калорій, БЖВ (білки, жири, вуглеводи), а також спеціалізовані інструменти для схуднення, набору м'язової маси, підтримки форми та контролю цукрового діабету 2 типу.</p>
+
+    <p>Усі розрахунки базуються на науково обґрунтованих формулах (наприклад, формула Міффліна-Сан Жеора для базового метаболізму) та рекомендаціях авторитетних організацій, таких як Всесвітня організація охорони здоров'я (ВООЗ), Американська діабетична асоціація та традиційна лікувальна дієта №9.</p>
+
+    <h3>Для кого цей сайт?</h3>
+    <p>Наші інструменти та матеріали будуть корисні:</p>
+    <ul style="line-height: 1.8; margin: 20px 0; padding-left: 30px;">
+        <li>Людям, які прагнуть схуднути без жорстких обмежень і зберегти результат надовго</li>
+        <li>Тим, хто займається спортом і хоче набрати м'язову масу здоровим способом</li>
+        <li>Особи з цукровим діабетом 2 типу або предіабетом, які шукають інформацію про глікемічний індекс і безпечне меню</li>
+        <li>Усім, хто просто хоче підтримувати стабільну вагу та гарне самопочуття</li>
+    </ul>
+
+    <h3>Чому важливо правильно розрахувати калорійність?</h3>
+    <p>Щоденна потреба в калоріях залежить від віку, статі, ваги, зросту та рівня фізичної активності. Надлишок калорій призводить до набору ваги, а дефіцит — до її втрати. Але різкий дефіцит або профіцит може бути шкідливим для здоров'я. Наш калькулятор допомагає знайти баланс: наприклад, безпечне схуднення — це дефіцит 300–500 ккал на добу, що дає втрату 0.5–1 кг на тиждень без стресу для організму.</p>
+
+    <h3>Особлива увага — харчування при діабеті</h3>
+    <p>При цукровому діабеті 2 типу ключовим є контроль рівня глюкози в крові. Ми надаємо повну таблицю глікемічних індексів продуктів, приклади меню з низьким ГІ та рекомендації щодо "здорової тарілки". Продукти з низьким глікемічним індексом (до 55) викликають повільне підвищення цукру, що допомагає уникнути різких стрибків і краще контролювати стан.</p>
+
+    <p>Наприклад, основою раціону можуть бути некрахмалисті овочі (броколі, кабачки, листова зелень), цільнозернові крупи в помірній кількості, нежирні джерела білка (курка, риба, яйця, сир) та корисні жири (авокадо, горіхи, оливкова олія).</p>
+
+    <h3>Як користуватися сайтом?</h3>
+    <p>Все просто:</p>
+    <ol style="line-height: 1.8; margin: 20px 0; padding-left: 30px;">
+        <li>Введіть свої дані в калькулятор на головній сторінці</li>
+        <li>Оберіть ціль (схуднення, набір маси, підтримка або діабет)</li>
+        <li>Отримайте рекомендовану добову калорійність та розподіл БЖВ</li>
+        <li>Перейдіть до відповідного розділу для детальних меню, таблиць та PDF-матеріалів</li>
+    </ol>
+
+    <h3>Важливе застереження</h3>
+    <p>Усі матеріали на сайті мають виключно інформаційний характер. Вони не замінюють консультацію лікаря, ендокринолога чи дієтолога. Перед зміною раціону, особливо при наявності хронічних захворювань, обов'язково проконсультуйтеся з фахівцем.</p>
+
+    <p>Ми постійно оновлюємо контент, додаємо нові матеріали та вдосконалюємо інструменти. Якщо у вас є пропозиції чи питання — пишіть нам через <a href="contact.html">сторінку контактів</a>.</p>
+
+    <p style="text-align: center; margin-top: 40px; font-style: italic;">Здорове харчування — це не тимчасова дієта, а спосіб життя. SmartDiet допомагає зробити перший крок і підтримувати його щодня ❤️</p>
+</section>
+<section class="hero-home">
+    <div class="hero-glass-card">
+        <h2>Твій персональний дієтолог завжди поруч 🥗</h2>
+        
+        <div class="hero-subtitle">
+            <div>✅ Безкоштовний розрахунок калорій</div>
+            <div>✅ Готові меню на кожен день</div>
+            <div>✅ Без голоду та жорстких обмежень</div>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="stat-icon">👥</span>
+                <strong>12,500+</strong>
+                <span>користувачів</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">📉</span>
+                <strong>-87,000 кг</strong>
+                <span>втрачено разом</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">⭐</span>
+                <strong>4.8/5</strong>
+                <span>оцінка</span>
+            </div>
+        </div>
+        
+        <a href="#calc-form" class="cta-scroll">Почати розрахунок ↓</a>
+    </div>
+</section>
+
+<style>
+    .local-steps-grid {
+        display: flex;            /* Робимо в рядок */
+        gap: 20px;               /* Відстань між кроками */
+        justify-content: center;  /* Центруємо */
+        flex-wrap: wrap;          /* Для мобільних (щоб ставали в стовпчик) */
+        margin-top: 30px;
+    }
+
+    .local-step {
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05); /* Ефект скла */
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    .local-step-number {
+        width: 40px;
+        height: 40px;
+        background: #f1c40f;      /* Золотистий колір номера */
+        color: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin: 0 auto 15px;      /* Центруємо кружечок */
+    }
+
+    .local-step h3 {
+        color: #f1c40f !important; /* Заголовок кроку */
+        margin-bottom: 10px;
+    }
+
+    .local-step p {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 14px;
+    }
+</style>
+
+<section class="how-it-works">
+    <div class="container-small">
+        <h2 style="text-align: center; color: white; margin-bottom: 40px;">Як почати за 3 хвилини</h2>
+        <div class="local-steps-grid">
+            <div class="local-step">
+                <div class="local-step-number">1</div>
+                <h3>Введіть дані</h3>
+                <p>Вік, вага, зріст і ціль</p>
+            </div>
+            <div class="local-step">
+                <div class="local-step-number">2</div>
+                <h3>Отримайте план</h3>
+                <p>Калорії та БЖВ за секунди</p>
+            </div>
+            <div class="local-step">
+                <div class="local-step-number">3</div>
+                <h3>Досягайте мети</h3>
+                <p>Готові меню щодня</p>
+            </div>
+        </div>
+    </div>
+</section>
     <main class="content-area">
         <div class="container">
+		
             <h1>Калькулятор здоров'я</h1>
             <p class="subtitle">Перетягніть повзунки, щоб отримати миттєвий результат</p>
             
@@ -152,72 +310,255 @@
                     </div>
                     <input type="range" id="weight" min="40" max="180" value="70" class="modern-slider">
                 </div>
+				<div class="activity-container" style="margin: 20px 0;">
+    <label style="display: block; font-weight: bold; margin-bottom: 15px; text-align: center;">Ваша активність:</label>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.2" checked style="display:none;">
+            <div class="card-content">🪑 Сидячий</div>
+        </label>
 
-                <div class="slider-group">
-                    <label style="font-size: 20px; font-weight: bold; display: block; margin-bottom: 15px; color: #2c3e50;">Ваша мета:</label>
-                    <div class="goal-selection">
-                        <input type="radio" name="goal" value="lose" id="goal-lose" checked>
-                        <label for="goal-lose" class="goal-label">🔥 Схуднення</label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.375" style="display:none;">
+            <div class="card-content">🚶 Низька</div>
+        </label>
 
-                        <input type="radio" name="goal" value="gain" id="goal-gain">
-                        <label for="goal-gain" class="goal-label">💪 Набір маси</label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.55" style="display:none;">
+            <div class="card-content">🏃 Помірна</div>
+        </label>
 
-                        <input type="radio" name="goal" value="diabetes" id="goal-diabetes">
-                        <label for="goal-diabetes" class="goal-label">🩸 Контроль діабету</label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.725" style="display:none;">
+            <div class="card-content">🏋️ Висока</div>
+        </label>
 
-                        <input type="radio" name="goal" value="maintain" id="goal-maintain">
-                        <label for="goal-maintain" class="goal-label">⚖️ Підтримка форми</label>
-                    </div>
-                </div>
+    </div>
+</div>
+
+                <div class="slider-group" style="margin-bottom: 30px;">
+    <label style="font-size: 20px; font-weight: bold; display: block; margin-bottom: 15px; color: #2c3e50; text-align: center;">Ваша мета:</label>
+    
+    <div class="goal-selection" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        
+        <input type="radio" name="goal" value="lose" id="goal-lose" checked style="display: none;">
+        <label for="goal-lose" class="goal-label">🔥 Схуднення</label>
+
+        <input type="radio" name="goal" value="gain" id="goal-gain" style="display: none;">
+        <label for="goal-gain" class="goal-label">💪 Набір маси</label>
+
+        <input type="radio" name="goal" value="diabetes" id="goal-diabetes" style="display: none;">
+        <label for="goal-diabetes" class="goal-label">🩸 Контроль діабету</label>
+
+        <input type="radio" name="goal" value="maintain" id="goal-maintain" style="display: none;">
+        <label for="goal-maintain" class="goal-label">⚖️ Підтримка форми</label>
+        
+    </div>
+</div>
 
                 <button type="submit" class="main-btn">
                     <i class="fas fa-calculator"></i> Розрахувати план
                 </button>
             </form>
 
-            <div id="result" class="hidden">
-                <h3>Ваш результат:</h3>
-                <p>Калорії: <span id="calories-out">0</span> ккал</p>
-                <div class="macros">
-                    Б: <span id="p-out">0</span>г | Ж: <span id="f-out">0</span>г | В: <span id="c-out">0</span>г
-                </div>
-                <p id="advice"></p>
-                <button id="cta-btn" class="main-btn">Отримати персональні рекомендації →</button>
-            </div>
+            <div id="result" class="hidden" style="display: none; background: white; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 40px 20px; margin-top: 30px; text-align: center;">
+    
+    <div style="margin-bottom: 20px;">
+        <span id="res-icon" style="font-size: 80px; display: block;">⚖️</span>
+    </div>
+    
+    <h2 style="font-size: 32px; font-weight: 800; color: #1f2937; margin-bottom: 30px;">Ваш результат</h2>
+
+    <div style="background-color: #f0f9ff; border-radius: 20px; padding: 30px; margin-bottom: 25px;">
+        <div style="font-size: 16px; color: #6b7280; margin-bottom: 8px; font-weight: 500;">Денна норма калорій</div>
+        <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px;">
+            <span id="calories-out" style="font-size: 64px; font-weight: 800; color: #0d9488;">2201</span>
         </div>
-    </main>
+        <div style="font-size: 18px; color: #6b7280; font-weight: 500;">ккал/день</div>
+    </div>
 
-    <footer style="text-align: center; padding: 40px 20px; background: #2c3e50; color: white; margin-top: 40px;">
-        <div style="margin-bottom: 20px;">
-            <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Приєднуйтесь до нашої спільноти:</p>
-            
-            <a href="https://www.instagram.com/smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
-                <i class="fab fa-instagram"></i>
-            </a>
-            
-            <a href="https://t.me/smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
-                <i class="fab fa-telegram"></i>
-            </a>
-            
-            <a href="https://www.tiktok.com/@smartdiet_ua" target="_blank" style="color: white; margin: 0 15px; font-size: 24px; text-decoration: none;">
-                <i class="fab fa-tiktok"></i>
-            </a>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 30px;">
+        <div style="background-color: #eff6ff; border-radius: 16px; padding: 20px 10px;">
+            <div id="p-out" style="font-size: 28px; font-weight: 800; color: #2563eb;">138г</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Білки</div>
         </div>
+        <div style="background-color: #fffbeb; border-radius: 16px; padding: 20px 10px;">
+            <div id="f-out" style="font-size: 28px; font-weight: 800; color: #d97706;">61г</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Жири</div>
+        </div>
+        <div style="background-color: #f0fdf4; border-radius: 16px; padding: 20px 10px;">
+            <div id="c-out" style="font-size: 28px; font-weight: 800; color: #16a34a;">275г</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Вуглеводи</div>
+        </div>
+    </div>
 
-        <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.1); margin: 20px auto;">
-
-        <p>&copy; 2026 SmartDiet. Всі права захищені.</p>
-        <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto;">
-            Перед початком будь-якої дієти проконсультуйтеся з лікарем. Матеріали сайту мають інформаційний характер.
+    <div style="margin-bottom: 30px; padding: 0 10px;">
+        <p id="advice" style="font-size: 16px; color: #4b5563; font-weight: 500; line-height: 1.5;">
+            Підтримуюча калорійність для стабільної ваги
         </p>
-    </footer>
+    </div>
+
+    <button id="cta-btn" style="width: 100%; background: linear-gradient(to right, #f97316, #fb923c); color: white; padding: 20px; border: none; border-radius: 16px; font-size: 18px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);">
+        Отримати персональне меню →
+    </button>
+	
+</div>
+    </main>
+	<section class="faq-section" style="padding: 40px 20px;">
+    <h2 style="text-align: center; color: #2c7a7b; margin-bottom: 30px;">Часті питання</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: flex-start;">
+        
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                🤔 Чи безпечно схуднути на 5 кг за місяць?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Так, якщо дотримуватись дефіциту 400-500 ккал щодня. Це здоровий темп, який рекомендують дієтологи.
+            </p>
+        </details>
+
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                💳 Чи безкоштовний ваш калькулятор?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Так, розрахунок калорій та базові поради завжди залишаються безкоштовними для наших користувачів.
+            </p>
+        </details>
+
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                🥗 Чи підходять ваші меню для вегетаріанців?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Так, у наших планах харчування можна знайти альтернативні варіанти страв без м'яса.
+            </p>
+        </details>
+
+    </div>
+</section>
+
+<style>
+    /* Прибираємо стандартну стрілочку браузера для чистого вигляду */
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+</style>
+<style>
+    .local-benefits-grid {
+        display: flex;             /* Робимо в рядок */
+        gap: 20px;                /* Відстань між картками */
+        justify-content: center;   /* Центруємо */
+        flex-wrap: wrap;           /* Щоб на телефонах все ж падало в стовпчик */
+        margin-top: 30px;
+    }
+
+    .local-benefit-card {
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: white;
+    }
+
+    .local-benefit-card h4 {
+        color: #f1c40f !important;
+        margin: 10px 0;
+    }
+</style>
+
+<section class="benefits-dark">
+    <h3 style="text-align: center; color: white; margin-bottom: 30px;">Чому обирають SmartDiet?</h3>
+    <div class="local-benefits-grid">
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🎯</div>
+            <h4>Точність</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Розрахунок за формулою Міффліна-Сан Жеора</p>
+        </div>
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🥗</div>
+            <h4>Готові меню</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Плани харчування для будь-якої мети</p>
+        </div>
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🛡️</div>
+            <h4>Безпека</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Рекомендації згідно з медичними нормами</p>
+        </div>
+		<section style="padding: 60px 20px; background: transparent; color: #ffffff; line-height: 1.6;">
+    <div style="max-width: 800px; margin: 0 auto; font-family: sans-serif; background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <h2 style="color: #f1c40f; font-size: 28px; margin-bottom: 20px; border-bottom: 2px solid #f1c40f; display: inline-block; padding-bottom: 5px;">
+            Про проект SmartDiet
+        </h2>
+        
+        <p style="color: #ffffff; font-size: 18px; margin-bottom: 15px;">
+            <strong>SmartDiet</strong> — це сучасний інформаційний ресурс, створений для того, щоб зробити здоровий спосіб життя зрозумілим та доступним для кожного. Ми допомагаємо людям досягати їхніх цілей: від безпечного схуднення до ефективного набору м'язової маси.
+        </p>
+
+        <p style="color: #ffffff; font-size: 16px; margin-bottom: 15px; opacity: 0.9;">
+            Наші інструменти розрахунку базуються на науково підтверджених методиках, зокрема на <strong>формулі Міффліна-Сан Жеора</strong>, яка на сьогодні вважається однією з найточніших для визначення денної норми калорій.
+        </p>
+
+        <p style="color: #ffffff; font-size: 16px; margin-bottom: 15px; opacity: 0.9;">
+            Особливу увагу ми приділяємо підтримці людей з особливими дієтичними потребами, такими як <strong>цукровий діабет 2 типу</strong>. Наша мета — надати перевірену інформацію про глікемічні індекси та принципи дієтичного харчування, щоб допомогти вам контролювати стан здоров'я через правильний раціон.
+        </p>
+
+        <p style="color: #ffffff; font-size: 14px; font-style: italic; margin-top: 30px; border-left: 4px solid #f1c40f; padding-left: 15px; opacity: 0.8;">
+            Вся інформація на сайті має виключно ознайомчий характер. Ми наполегливо рекомендуємо консультуватися з лікарем або професійним дієтологом перед внесенням суттєвих змін у ваш раціон або режим фізичних навантажень.
+        </p>
+    </div>
+</section>
+    </div>
+</section>
+    <footer style="text-align: center; padding: 40px 20px; background: rgba(0, 0, 0, 0.7) !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); color: white; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+    <div style="margin-bottom: 20px;">
+        <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Приєднуйтесь до нашої спільноти:</p>
+        
+        <a href="https://www.instagram.com/smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="https://t.me/smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-telegram"></i>
+        </a>
+        
+        <a href="https://www.tiktok.com/@smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.2); margin: 20px auto;">
+
+    <p style="color: #ffffff; font-weight: bold;">&copy; 2026 SmartDiet. Всі права захищені.</p>
+    
+    <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto; color: rgba(255, 255, 255, 0.8);">
+        Перед початком будь-якої дієти проконсультуйтеся з лікарем. Матеріали сайту мають інформаційний характер.
+    </p>
+	 <a href="about.html">Про нас</a> |
+  <a href="privacy-policy.html">Політика конфіденційності</a> |
+  <a href="terms.html">Умови використання</a> |
+  <a href="medical-disclaimer.html">Медичне застереження</a> |
+  <a href="contact.html">Контакти</a>
+</footer>
+
 
     <script src="script.js"></script>
+	<script>
+function changeLanguage(lang) {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts.pop() || "index.html";
+    
+    // Якщо UA — залишаємось в корені. Якщо інша мова — йдемо в папку цієї мови.
+    let newPath = (lang === "") ? currentPage : lang + "/" + currentPage;
+    
+    window.location.href = newPath;
+}
+</script>
 </body>
 </html>
-    <script src="script.js"></script>
-</body>
-
-</html>
-
-
