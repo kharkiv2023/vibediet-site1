@@ -1,86 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Головна сторінка -->
   <url>
     <loc>https://smartdiet.com.ua/</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartdiet.com.ua/" />
   </url>
 
-  <url>
-    <loc>https://smartdiet.com.ua/lose.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://smartdiet.com.ua/gain.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://smartdiet.com.ua/maintain.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
+  <!-- Сторінки в українській (основній) версії -->
   <url>
     <loc>https://smartdiet.com.ua/diabetes.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://smartdiet.com.ua/diabetes-forbidden.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/diabetes.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/diabetes.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/diabetes.html" />
   </url>
 
   <url>
     <loc>https://smartdiet.com.ua/diabetes-menu.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/diabetes-menu.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/diabetes-menu.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/diabetes-menu.html" />
   </url>
 
   <url>
     <loc>https://smartdiet.com.ua/glycemic-index.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/glycemic-index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/glycemic-index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/glycemic-index.html" />
+  </url>
+
+  <url>
+    <loc>https://smartdiet.com.ua/diabetes-forbidden.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/diabetes-forbidden.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/diabetes-forbidden.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/diabetes-forbidden.html" />
   </url>
 
   <url>
     <loc>https://smartdiet.com.ua/table-9-menu.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/table-9-menu.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/table-9-menu.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/table-9-menu.html" />
   </url>
 
   <url>
-    <loc>https://smartdiet.com.ua/premium-diabetes-30.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://smartdiet.com.ua/lose.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/lose.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/lose.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/lose.html" />
   </url>
 
   <url>
-    <loc>https://smartdiet.com.ua/lose-free-day.pdf</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.5</priority>
+    <loc>https://smartdiet.com.ua/gain.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/gain.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/gain.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/gain.html" />
   </url>
 
   <url>
-    <loc>https://smartdiet.com.ua/maintain-free-day.pdf</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.5</priority>
+    <loc>https://smartdiet.com.ua/maintain.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/maintain.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/maintain.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/maintain.html" />
+  </url>
+
+  <url>
+    <loc>https://smartdiet.com.ua/about.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/about.html" />
+  </url>
+
+  <url>
+    <loc>https://smartdiet.com.ua/contact.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/contact.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/contact.html" />
+  </url>
+
+  <url>
+    <loc>https://smartdiet.com.ua/privacy-policy.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/privacy-policy.html" />
+  </url>
+
+  <url>
+    <loc>https://smartdiet.com.ua/terms.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/terms.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/terms.html" />
+  </url>
+
+  <url>
+    <loc>https://smartdiet.com.ua/medical-disclaimer.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/medical-disclaimer.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/medical-disclaimer.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/medical-disclaimer.html" />
   </url>
 
 </urlset>
