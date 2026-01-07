@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+<script>
+(function() {
+    // 1. Define browser language
+    var userLang = navigator.language || navigator.userLanguage;
+    var langCode = userLang.substring(0, 2).toLowerCase();
+  
+    // 2. Check if we already redirected (to prevent infinite loop)
+    var alreadyRedirected = sessionStorage.getItem('lang_redirected');
+  
+    // 3. Get current path
+    var currentPath = window.location.pathname;
+    // Check if user is NOT already in language folder /en/ or /fr/
+    var isInLangFolder = currentPath.startsWith('/en/') || currentPath.startsWith('/fr/');
+    if (!alreadyRedirected && !isInLangFolder) {
+        sessionStorage.setItem('lang_redirected', 'true');
+      
+        if (langCode === 'fr') {
+            window.location.href = '/fr' + (currentPath === '/' ? '/index.html' : currentPath);
+        } else if (langCode === 'en') {
+            window.location.href = '/en' + (currentPath === '/' ? '/index.html' : currentPath);
+        }
+    }
+})();
+</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HZZRFP01R7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="yUEhQ4gc4F38slNbabB3xoVANOeG0erZrjBqyKrAsKI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <meta name="description" content="Calculateur gratuit de calories et macronutriments. Obtenez un plan nutritionnel personnalisé pour la perte de poids, la prise de muscle ou la gestion du diabète avec SmartDiet.">
+    <title>SmartDiet — Plans Nutritionnels Personnalisés & Calculateur de Calories</title>
+    <meta property="og:title" content="SmartDiet — Votre Calculateur de Santé Personnel">
+    <meta property="og:description" content="Calculez vos besoins caloriques et obtenez un menu quotidien pour le diabète ou la perte de poids en seulement 1 minute.">
+    <meta property="og:image" content="https://smartdiet.com.ua/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/index.html">
+<link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/index.html">
+<link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/index.html">
+<link rel="alternate" hreflang="x-default" href="https://smartdiet.com.ua/index.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+  
+  
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i> SmartDiet
+            </div>
+          
+            <nav class="desktop-nav" id="side-nav">
+                <a href="index.html" class="active">Accueil</a>
+              
+                <div class="dropdown">
+                    <a href="diabetes.html" class="dropdown-toggle">Diabète <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="diabetes.html">Alimentation pour le Diabète de Type 2</a>
+                        <a href="diabetes-menu.html">Menu pour le Diabète de Type 2</a>
+                        <a href="glycemic-index.html">Tableau de l'Indice Glycémique</a>
+                        <a href="diabetes-forbidden.html">Aliments à Éviter en cas de Diabète</a>
+                        <a href="table-9-menu.html">Menu Table Nº9</a>
+                    </div>
+                </div>
+                <a href="lose.html">Perte de Poids</a>
+                <a href="gain.html">Prise de Masse Musculaire</a>
+                <a href="maintain.html">Maintien de la Forme</a>
+<div class="lang-select" style="display: inline-block; margin-left: 15px;">
+    <a href="javascript:void(0)" onclick="changeLanguage('')">UA</a> |
+    <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a> |
+    <a href="javascript:void(0)" onclick="changeLanguage('fr')" style="font-weight: bold;">FR</a>
+</div>
+            </nav>
+            <div class="menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+<section class="hero-home">
+    <div class="hero-glass-card">
+        <h1>Votre Diététicien Personnel Toujours à Portée de Main 🥗</h1>
+      
+        <div class="hero-subtitle">
+            <div>✅ Calcul Gratuit des Calories</div>
+            <div>✅ Menus Quotidiens Prêts</div>
+            <div>✅ Sans Faim ni Restrictions Extrêmes</div>
+        </div>
+      
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="stat-icon">👥</span>
+                <strong>12 500+</strong>
+                <span>utilisateurs</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">📉</span>
+                <strong>-87 000 kg</strong>
+                <span>perdus ensemble</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">⭐</span>
+                <strong>4,8/5</strong>
+                <span>note</span>
+            </div>
+        </div>
+      
+        <a href="#calc-form" class="cta-scroll">Commencer le Calcul ↓</a>
+    </div>
+</section>
+<style>
+    .local-steps-grid {
+        display: flex; /* row */
+        gap: 20px; /* spacing between steps */
+        justify-content: center; /* center */
+        flex-wrap: wrap; /* stack on mobile */
+        margin-top: 30px;
+    }
+    .local-step {
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05); /* glass effect */
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    .local-step-number {
+        width: 40px;
+        height: 40px;
+        background: #f1c40f; /* golden number color */
+        color: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin: 0 auto 15px; /* center circle */
+    }
+    .local-step h3 {
+        color: #f1c40f !important; /* step title */
+        margin-bottom: 10px;
+    }
+    .local-step p {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 14px;
+    }
+</style>
+<section class="hero-home">
+    <div class="hero-glass-card">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 2rem;">SmartDiet — votre assistant en nutrition consciente</h2>
+    <p>SmartDiet est une plateforme en ligne créée pour ceux qui souhaitent mieux comprendre leur alimentation et l'impact des aliments sur la santé. Nous proposons des calculateurs gratuits de calories, de macros (protéines, lipides, glucides), ainsi que des outils spécialisés pour la perte de poids, la prise de masse musculaire, le maintien de la forme et le contrôle du diabète de type 2.</p>
+    <p>Tous les calculs sont basés sur des formules scientifiquement validées (par exemple, la formule de Mifflin-St Jeor pour le métabolisme de base) et sur les recommandations d'organisations faisant autorité, telles que l'Organisation mondiale de la santé (OMS), l'American Diabetes Association et le régime thérapeutique traditionnel n°9.</p>
+    <h3>À qui s'adresse ce site ?</h3>
+    <p>Nos outils et matériaux seront utiles :</p>
+    <ul style="line-height: 1.8; margin: 20px 0; padding-left: 30px;">
+        <li>Aux personnes qui souhaitent perdre du poids sans restrictions strictes et maintenir le résultat sur le long terme</li>
+        <li>À ceux qui pratiquent du sport et veulent prendre de la masse musculaire de manière saine</li>
+        <li>Aux personnes atteintes de diabète de type 2 ou de prédiabète qui recherchent des informations sur l'indice glycémique et des menus sûrs</li>
+        <li>À tous ceux qui veulent simplement maintenir un poids stable et un bon bien-être</li>
+    </ul>
+    <h3>Pourquoi est-il important de calculer correctement les calories ?</h3>
+    <p>Les besoins quotidiens en calories dépendent de l'âge, du sexe, du poids, de la taille et du niveau d'activité physique. Un excès de calories entraîne une prise de poids, tandis qu'un déficit entraîne une perte de poids. Cependant, un déficit ou un excès brutal peut être nocif pour la santé. Notre calculateur aide à trouver l'équilibre : par exemple, une perte de poids sûre correspond à un déficit de 300–500 kcal par jour, ce qui permet une perte de 0,5–1 kg par semaine sans stress pour l'organisme.</p>
+    <h3>Attention particulière — alimentation en cas de diabète</h3>
+    <p>Dans le diabète de type 2, la clé est le contrôle du taux de glucose dans le sang. Nous fournissons un tableau complet des indices glycémiques des aliments, des exemples de menus à faible IG et des recommandations sur « l'assiette saine ». Les aliments à faible indice glycémique (jusqu'à 55) provoquent une augmentation lente du sucre, ce qui aide à éviter les pics brutaux et à mieux contrôler l'état.</p>
+    <p>Par exemple, la base du régime peut être constituée de légumes non amylacés (brocoli, courgettes, légumes verts à feuilles), de céréales complètes en quantité modérée, de sources de protéines maigres (poulet, poisson, œufs, fromage) et de graisses saines (avocat, noix, huile d'olive).</p>
+    <h3>Comment utiliser le site ?</h3>
+    <p>C'est simple :</p>
+    <ol style="line-height: 1.8; margin: 20px 0; padding-left: 30px;">
+        <li>Saisissez vos données dans le calculateur sur la page principale</li>
+        <li>Choisissez votre objectif (perte de poids, prise de masse, maintien ou diabète)</li>
+        <li>Obtenez la calorique quotidienne recommandée et la répartition des macros</li>
+        <li>Passez à la section correspondante pour des menus détaillés, tableaux et documents PDF</li>
+    </ol>
+    <h3>Avertissement important</h3>
+    <p>Tous les matériaux du site sont à titre informatif uniquement. Ils ne remplacent pas une consultation chez un médecin, un endocrinologue ou un diététicien. Avant de modifier votre régime, en particulier en cas de maladies chroniques, consultez obligatoirement un spécialiste.</p>
+    <p>Nous mettons constamment à jour le contenu, ajoutons de nouveaux matériaux et améliorons les outils. Si vous avez des suggestions ou des questions — écrivez-nous via la <a href="contact.html">page de contact</a>.</p>
+    <p style="text-align: center; margin-top: 40px; font-style: italic;">Une alimentation saine n'est pas un régime temporaire, mais un mode de vie. SmartDiet vous aide à faire le premier pas et à le maintenir chaque jour ❤️</p>
+    </div>
+</section>
+<section class="how-it-works">
+    <div class="container-small">
+        <h2 style="text-align: center; color: white; margin-bottom: 40px;">Comment Commencer en 3 Minutes</h2>
+        <div class="local-steps-grid">
+            <div class="local-step">
+                <div class="local-step-number">1</div>
+                <h3>Saisissez Vos Données</h3>
+                <p>Âge, poids, taille et objectif</p>
+            </div>
+            <div class="local-step">
+                <div class="local-step-number">2</div>
+                <h3>Obtenez Votre Plan</h3>
+                <p>Calories & macros en quelques secondes</p>
+            </div>
+            <div class="local-step">
+                <div class="local-step-number">3</div>
+                <h3>Atteignez Votre Objectif</h3>
+                <p>Menus quotidiens prêts</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <main class="content-area">
+        <div class="container">
+            <h1>Calculateur de Santé</h1>
+            <p class="subtitle">Déplacez les curseurs pour obtenir des résultats instantanés</p>
+          
+            <form id="calc-form">
+                <div class="gender-switch">
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="male" checked>
+                        <span class="gender-box">Homme</span>
+                    </label>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="female">
+                        <span class="gender-box">Femme</span>
+                    </label>
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Âge</label>
+                        <span id="age-val" class="slider-value">25</span>
+                    </div>
+                    <input type="range" id="age" min="15" max="100" value="25" class="modern-slider">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Taille (cm)</label>
+                        <span id="height-val" class="slider-value">175</span>
+                    </div>
+                    <input type="range" id="height" min="120" max="220" value="175" class="modern-slider">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label>Poids (kg)</label>
+                        <span id="weight-val" class="slider-value">70</span>
+                    </div>
+                    <input type="range" id="weight" min="40" max="180" value="70" class="modern-slider">
+                </div>
+<div class="activity-container" style="margin: 20px 0;">
+    <label style="display: block; font-weight: bold; margin-bottom: 15px; text-align: center;">Votre Niveau d’Activité :</label>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.2" checked style="display:none;">
+            <div class="card-content">🪑 Sédentaire</div>
+        </label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.375" style="display:none;">
+            <div class="card-content">🚶 Faible</div>
+        </label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.55" style="display:none;">
+            <div class="card-content">🏃 Modérée</div>
+        </label>
+        <label class="activity-card">
+            <input type="radio" name="activity" value="1.725" style="display:none;">
+            <div class="card-content">🏋️ Élevée</div>
+        </label>
+    </div>
+</div>
+                <div class="slider-group" style="margin-bottom: 30px;">
+    <label style="font-size: 20px; font-weight: bold; display: block; margin-bottom: 15px; color: #2c3e50; text-align: center;">Votre Objectif :</label>
+  
+    <div class="goal-selection" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      
+        <input type="radio" name="goal" value="lose" id="goal-lose" checked style="display: none;">
+        <label for="goal-lose" class="goal-label">🔥 Perte de Poids</label>
+        <input type="radio" name="goal" value="gain" id="goal-gain" style="display: none;">
+        <label for="goal-gain" class="goal-label">💪 Prise de Muscle</label>
+        <input type="radio" name="goal" value="diabetes" id="goal-diabetes" style="display: none;">
+        <label for="goal-diabetes" class="goal-label">🩸 Contrôle du Diabète</label>
+        <input type="radio" name="goal" value="maintain" id="goal-maintain" style="display: none;">
+        <label for="goal-maintain" class="goal-label">⚖️ Maintien du Poids</label>
+      
+    </div>
+</div>
+                <button type="submit" class="main-btn">
+                    <i class="fas fa-calculator"></i> Calculer le Plan
+                </button>
+            </form>
+            <div id="result" class="hidden" style="display: none; background: white; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 40px 20px; margin-top: 30px; text-align: center;">
+  
+    <div style="margin-bottom: 20px;">
+        <span id="res-icon" style="font-size: 80px; display: block;">⚖️</span>
+    </div>
+  
+    <h2 style="font-size: 32px; font-weight: 800; color: #1f2937; margin-bottom: 30px;">Votre Résultat</h2>
+    <div style="background-color: #f0f9ff; border-radius: 20px; padding: 30px; margin-bottom: 25px;">
+        <div style="font-size: 16px; color: #6b7280; margin-bottom: 8px; font-weight: 500;">Apport Calorique Quotidien</div>
+        <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px;">
+            <span id="calories-out" style="font-size: 64px; font-weight: 800; color: #0d9488;">2201</span>
+        </div>
+        <div style="font-size: 18px; color: #6b7280; font-weight: 500;">kcal/jour</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 30px;">
+        <div style="background-color: #eff6ff; border-radius: 16px; padding: 20px 10px;">
+            <div id="p-out" style="font-size: 28px; font-weight: 800; color: #2563eb;">138g</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Protéines</div>
+        </div>
+        <div style="background-color: #fffbeb; border-radius: 16px; padding: 20px 10px;">
+            <div id="f-out" style="font-size: 28px; font-weight: 800; color: #d97706;">61g</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Lipides</div>
+        </div>
+        <div style="background-color: #f0fdf4; border-radius: 16px; padding: 20px 10px;">
+            <div id="c-out" style="font-size: 28px; font-weight: 800; color: #16a34a;">275g</div>
+            <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">Glucides</div>
+        </div>
+    </div>
+    <div style="margin-bottom: 30px; padding: 0 10px;">
+        <p id="advice" style="font-size: 16px; color: #4b5563; font-weight: 500; line-height: 1.5;">
+            Calories de maintien pour un poids stable
+        </p>
+    </div>
+    <button id="cta-btn" style="width: 100%; background: linear-gradient(to right, #f97316, #fb923c); color: white; padding: 20px; border: none; border-radius: 16px; font-size: 18px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);">
+        Obtenir un Menu Personnalisé →
+    </button>
+</div>
+    </main>
+<section class="faq-section" style="padding: 40px 20px;">
+    <h2 style="text-align: center; color: #2c7a7b; margin-bottom: 30px;">Questions Fréquemment Posées</h2>
+   
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: flex-start;">
+       
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                🤔 Est-il sûr de perdre 5 kg en un mois ?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Oui, si vous maintenez un déficit quotidien de 400-500 kcal. C’est un rythme sain recommandé par les nutritionnistes.
+            </p>
+        </details>
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                💳 Votre calculateur est-il gratuit ?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Oui, le calcul des calories et les conseils de santé de base restent toujours gratuits pour nos utilisateurs.
+            </p>
+        </details>
+        <details style="flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; color: #000000 !important;">
+            <summary style="font-weight: bold; color: #000000 !important; list-style: none; outline: none;">
+                🥗 Vos menus conviennent-ils aux végétariens ?
+            </summary>
+            <p style="margin-top: 15px; color: #333333 !important; font-size: 14px; line-height: 1.5;">
+                Oui, nos plans nutritionnels incluent des options de repas sans viande.
+            </p>
+        </details>
+    </div>
+</section>
+<style>
+    /* Remove default browser arrow for clean look */
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+</style>
+<style>
+    .local-benefits-grid {
+        display: flex; /* row */
+        gap: 20px; /* spacing between cards */
+        justify-content: center; /* center */
+        flex-wrap: wrap; /* stack on mobile */
+        margin-top: 30px;
+    }
+    .local-benefit-card {
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: white;
+    }
+    .local-benefit-card h4 {
+        color: #f1c40f !important;
+        margin: 10px 0;
+    }
+</style>
+<section class="benefits-dark">
+    <h3 style="text-align: center; color: white; margin-bottom: 30px;">Pourquoi Choisir SmartDiet ?</h3>
+    <div class="local-benefits-grid">
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🎯</div>
+            <h4>Précision</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Calcul basé sur la formule Mifflin-St Jeor</p>
+        </div>
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🥗</div>
+            <h4>Menus Prêts</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Plans nutritionnels pour tous les objectifs</p>
+        </div>
+        <div class="local-benefit-card">
+            <div style="font-size: 30px;">🛡️</div>
+            <h4>Sécurité</h4>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Recommandations fondées sur des normes médicales</p>
+        </div>
+    </div>
+</section>
+    <footer style="text-align: center; padding: 40px 20px; background: rgba(0, 0, 0, 0.7) !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); color: white; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+    <div style="margin-bottom: 20px;">
+        <p style="margin-bottom: 15px; font-size: 16px; opacity: 0.9;">Rejoignez notre communauté :</p>
+      
+        <a href="https://www.instagram.com/smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-instagram"></i>
+        </a>
+      
+        <a href="https://t.me/smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-telegram"></i>
+        </a>
+      
+        <a href="https://www.tiktok.com/@smartdiet_ua" target="_blank" style="color: #f1c40f; margin: 0 15px; font-size: 24px; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+    <hr style="width: 50px; border: 1px solid rgba(255,255,255,0.2); margin: 20px auto;">
+    <p style="color: #ffffff; font-weight: bold;">&copy; 2026 SmartDiet. Tous droits réservés.</p>
+  
+    <p style="font-size: 12px; opacity: 0.7; max-width: 600px; margin: 10px auto; color: rgba(255, 255, 255, 0.8);">
+        Consultez votre médecin avant de commencer tout régime. Les matériaux du site sont à titre informatif uniquement.
+    </p>
+<a href="about.html">À propos de nous</a> |
+<a href="privacy-policy.html">Politique de Confidentialité</a> |
+<a href="terms.html">Conditions d'Utilisation</a> |
+<a href="medical-disclaimer.html">Avertissement Médical</a> |
+<a href="contact.html">Contact</a>
+</footer>
+    <script src="script.js"></script>
+<script>
+function changeLanguage(lang) {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts.pop() || "index.html";
+   
+    let newPath;
+    if (lang === "") {
+        newPath = "../" + currentPage;
+    } else {
+        newPath = "../" + lang + "/" + currentPage;
+    }
+   
+    window.location.href = newPath;
+}
+</script>
+</body>
+</html>

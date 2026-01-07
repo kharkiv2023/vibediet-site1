@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HZZRFP01R7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité — SmartDiet</title>
+    <meta name="description" content="Comment SmartDiet traite vos données personnelles.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-container">
+            <div class="logo"><i class="fa-solid fa-heart-pulse"></i> SmartDiet</div>
+            <nav class="desktop-nav" id="side-nav">
+                <a href="index.html">Accueil</a>
+                <div class="dropdown">
+                    <a href="diabetes.html" class="dropdown-toggle">Diabète <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="diabetes.html">Alimentation pour le Diabète de Type 2</a>
+                        <a href="diabetes-menu.html">Menu pour le Diabète de Type 2</a>
+                        <a href="glycemic-index.html">Tableau de l'Indice Glycémique</a>
+                        <a href="diabetes-forbidden.html">Aliments à Éviter en cas de Diabète</a>
+                        <a href="table-9-menu.html">Menu Tableau Nº9</a>
+                    </div>
+                </div>
+                <a href="lose.html">Perte de Poids</a>
+                <a href="gain.html">Prise de Masse Musculaire</a>
+                <a href="maintain.html">Maintien de la Forme</a>
+                <div class="lang-select">
+                    <a href="javascript:void(0)" onclick="changeLanguage('')">UA</a> |
+                    <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a> |
+                    <a href="javascript:void(0)" onclick="changeLanguage('fr')" style="font-weight: bold;">FR</a>
+                </div>
+            </nav>
+            <div class="menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+    <main>
+        <section class="content-area" style="max-width: 800px; margin: 50px auto; padding: 20px;">
+            <h1>Politique de Confidentialité</h1>
+            <p>Dernière mise à jour : 5 janvier 2026.</p>
+            <p>SmartDiet respecte votre vie privée. Cette politique décrit la manière dont nous collectons, utilisons et protégeons vos données.</p>
+            <h2>Quelles données collectons-nous ?</h2>
+            <ul>
+                <li>Données personnelles : Nom, e-mail, âge, poids, taille (si vous utilisez le calculateur ou achetez un plan).</li>
+                <li>Données techniques : Adresse IP, type de navigateur, données de visite (via Google Analytics).</li>
+                <li>Cookies : Pour améliorer l’expérience (vous pouvez les refuser dans les paramètres de votre navigateur).</li>
+            </ul>
+            <h2>Comment utilisons-nous les données ?</h2>
+            <p>Pour fournir nos services : Calcul des calories, envoi de menus, amélioration du site. Nous ne vendons pas vos données à des tiers.</p>
+            <h2>Protection des données</h2>
+            <p>Nous utilisons le chiffrement SSL et d’autres mesures de sécurité. L’accès aux données est strictement limité.</p>
+            <h2>Vos droits</h2>
+            <p>Vous pouvez demander l’accès, la correction ou la suppression de vos données. Contactez-nous : <a href="mailto:support@smartdiet.com.ua">support@smartdiet.com.ua</a>.</p>
+            <h2>Modifications de la politique</h2>
+            <p>Nous pouvons mettre à jour cette politique. Veuillez la consulter périodiquement.</p>
+        </section>
+    </main>
+    <footer>
+        <!-- Votre pied de page standard -->
+        <p>&copy; 2026 SmartDiet. Tous droits réservés.</p>
+        <a href="about.html">À propos de nous</a> | <a href="privacy-policy.html">Politique de Confidentialité</a> | <a href="terms.html">Conditions d'Utilisation</a> | <a href="medical-disclaimer.html">Avertissement Médical</a> | <a href="contact.html">Contact</a>
+    <script>
+function changeLanguage(lang) {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts.pop() || "index.html";
+  
+    let newPath;
+    if (lang === "") {
+        newPath = "../" + currentPage;
+    } else {
+        newPath = "../" + lang + "/" + currentPage;
+    }
+  
+    window.location.href = newPath;
+}
+</script>
+	</footer>
+    <script src="script.js"></script>
+</body>
+</html>
