@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HZZRFP01R7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de nous — SmartDiet</title>
+    <meta name="description" content="En savoir plus sur SmartDiet : notre mission, notre équipe et notre approche de l’alimentation saine.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-container">
+            <div class="logo"><i class="fa-solid fa-heart-pulse"></i> SmartDiet</div>
+            <nav class="desktop-nav" id="side-nav">
+                <a href="index.html">Accueil</a>
+                <div class="dropdown">
+                    <a href="diabetes.html" class="dropdown-toggle">Diabète <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="diabetes.html">Alimentation pour le Diabète de Type 2</a>
+                        <a href="diabetes-menu.html">Menu pour le Diabète de Type 2</a>
+                        <a href="glycemic-index.html">Tableau de l'Indice Glycémique</a>
+                        <a href="diabetes-forbidden.html">Aliments à Éviter en cas de Diabète</a>
+                        <a href="table-9-menu.html">Menu Tableau Nº9</a>
+                    </div>
+                </div>
+                <a href="lose.html">Perte de Poids</a>
+                <a href="gain.html">Prise de Masse Musculaire</a>
+                <a href="maintain.html">Maintien de la Forme</a>
+                <div class="lang-select">
+                    <a href="javascript:void(0)" onclick="changeLanguage('')">UA</a> |
+                    <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a> |
+                    <a href="javascript:void(0)" onclick="changeLanguage('fr')" style="font-weight: bold;">FR</a>
+                </div>
+            </nav>
+            <div class="menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+    <main>
+        <section class="content-area" style="max-width: 800px; margin: 50px auto; padding: 20px;">
+            <h1>À propos de nous</h1>
+            <p>SmartDiet est une plateforme moderne de nutrition personnalisée, créée pour aider les gens à atteindre la santé et l’équilibre. Nous nous spécialisons dans les régimes pour le contrôle du diabète, la perte de poids, la prise de muscle et le maintien de la forme. Notre mission est de rendre l’alimentation saine accessible, simple et efficace pour tous.</p>
+            <h2>Notre histoire</h2>
+            <p>Fondé en 2023 en Ukraine, SmartDiet a commencé comme une idée pour aider les personnes atteintes de diabète de type 2 grâce à des menus personnalisés à faible indice glycémique. Aujourd’hui, nous proposons un calculateur de calories gratuit, des menus PDF prêts à l’emploi et des conseils de diététiciens. En 2026, nous avons élargi nos services en ajoutant le soutien à divers objectifs : de la perte de poids à la prise de muscle.</p>
+            <h2>Notre équipe</h2>
+            <p>L’équipe SmartDiet est composée de diététiciens certifiés, d’endocrinologues et de développeurs. Nous collaborons avec des experts médicaux pour garantir un contenu scientifiquement fondé. Chaque plan nutritionnel est vérifié pour sa sécurité et son efficacité.</p>
+            <h2>Pourquoi nous choisir ?</h2>
+            <ul>
+                <li>Personnalisation : Le calculateur de calories tient compte de l’âge, du poids, de l’activité et des objectifs.</li>
+                <li>Accessibilité : Outils gratuits et plans premium abordables.</li>
+                <li>Science : Basé sur les recommandations de l’OMS, de l’American Diabetes Association et du Régime Nº9.</li>
+                <li>Communauté : Rejoignez-nous sur Instagram, Telegram et TikTok pour de la motivation.</li>
+            </ul>
+            <p>Nous croyons que la santé commence dans l’assiette. Si vous avez des questions, contactez-nous via <a href="contact.html">smartdiet2026@gmail.com</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <!-- Votre pied de page standard -->
+        <p>&copy; 2026 SmartDiet. Tous droits réservés.</p>
+        <a href="about.html">À propos de nous</a> | <a href="privacy-policy.html">Politique de Confidentialité</a> | <a href="terms.html">Conditions d'Utilisation</a> | <a href="medical-disclaimer.html">Avertissement Médical</a> | <a href="contact.html">Contact</a>
+    <script>
+function changeLanguage(lang) {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts.pop() || "index.html";
+  
+    let newPath;
+    if (lang === "") {
+        newPath = "../" + currentPage;
+    } else {
+        newPath = "../" + lang + "/" + currentPage;
+    }
+  
+    window.location.href = newPath;
+}
+</script>
+	</footer>
+    <script src="script.js"></script>
+</body>
+</html>

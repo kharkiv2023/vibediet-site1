@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HZZRFP01R7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — SmartDiet</title>
+    <meta name="description" content="Contactez-nous pour vos questions, suggestions ou support.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-container">
+            <div class="logo"><i class="fa-solid fa-heart-pulse"></i> SmartDiet</div>
+            <nav class="desktop-nav" id="side-nav">
+                <a href="index.html">Accueil</a>
+                <div class="dropdown">
+                    <a href="diabetes.html" class="dropdown-toggle">Diabète <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="diabetes.html">Alimentation pour le Diabète de Type 2</a>
+                        <a href="diabetes-menu.html">Menu pour le Diabète de Type 2</a>
+                        <a href="glycemic-index.html">Tableau de l'Indice Glycémique</a>
+                        <a href="diabetes-forbidden.html">Aliments à Éviter en cas de Diabète</a>
+                        <a href="table-9-menu.html">Menu Tableau Nº9</a>
+                    </div>
+                </div>
+                <a href="lose.html">Perte de Poids</a>
+                <a href="gain.html">Prise de Masse Musculaire</a>
+                <a href="maintain.html">Maintien de la Forme</a>
+                <div class="lang-select">
+                    <a href="javascript:void(0)" onclick="changeLanguage('')">UA</a> |
+                    <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a> |
+                    <a href="javascript:void(0)" onclick="changeLanguage('fr')" style="font-weight: bold;">FR</a>
+                </div>
+            </nav>
+            <div class="menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+    <main>
+        <section class="content-area" style="max-width: 800px; margin: 50px auto; padding: 20px;">
+            <h1>Contact</h1>
+            <p>Nous sommes toujours heureux d’avoir de vos nouvelles ! Contactez-nous pour des questions sur les menus, des propositions de collaboration ou du support technique.</p>
+            <h2>E-mail</h2>
+            <p><a href="mailto:support@smartdiet.com.ua">support@smartdiet.com.ua</a> — pour les demandes générales.</p>
+            <h2>Réseaux sociaux</h2>
+            <ul>
+                <li>Instagram : <a href="https://www.instagram.com/smartdiet_ua">smartdiet_ua</a></li>
+                <li>Telegram : <a href="https://t.me/smartdiet_ua">smartdiet_ua</a></li>
+                <li>TikTok : <a href="https://www.tiktok.com/@smartdiet_ua">smartdiet_ua</a></li>
+            </ul>
+            <h2>Formulaire de contact</h2>
+            <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST"> <!-- Remplacer par votre formulaire, ex. Formspree -->
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre e-mail" required>
+                <textarea name="message" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <!-- Votre pied de page standard -->
+        <p>&copy; 2026 SmartDiet. Tous droits réservés.</p>
+        <a href="about.html">À propos de nous</a> | <a href="privacy-policy.html">Politique de Confidentialité</a> | <a href="terms.html">Conditions d'Utilisation</a> | <a href="medical-disclaimer.html">Avertissement Médical</a> | <a href="contact.html">Contact</a>
+    <script>
+function changeLanguage(lang) {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts.pop() || "index.html";
+  
+    let newPath;
+    if (lang === "") {
+        newPath = "../" + currentPage;
+    } else {
+        newPath = "../" + lang + "/" + currentPage;
+    }
+  
+    window.location.href = newPath;
+}
+</script>
+	</footer>
+    <script src="script.js"></script>
+</body>
+</html>
