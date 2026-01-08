@@ -21,15 +21,15 @@ body {
 }
 
 /* ===================================================
-   2. ШАПКА (КОМП'ЮТЕРНА ВЕРСІЯ - КЛАСИКА)
+   2. ШАПКА (ПК ВЕРСІЯ)
    =================================================== */
 .top-header {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 70px;
     background-color: rgba(20, 50, 50, 0.95) !important; 
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2000;
     display: flex;
     align-items: center;
 }
@@ -40,8 +40,9 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between; /* Лого зліва, Навігація справа */
+    justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -71,60 +72,62 @@ body {
 
 .desktop-nav a:hover { color: #f1c40f !important; }
 
-/* Приховуємо кнопку меню та блок мов для ПК, якщо вони в кастомних блоках */
-.menu-btn { display: none; }
+/* Приховуємо кнопку бургера на ПК */
+.menu-btn { 
+    display: none; 
+    cursor: pointer;
+    font-size: 28px;
+    color: #f1c40f;
+}
+
 .lang-select-center { display: flex; gap: 10px; }
+.lang-select-center a { color: #fff; text-decoration: none; font-weight: bold; }
 
 /* ===================================================
-   3. МОБІЛЬНА ВЕРСІЯ (МЕНЮ - МОВИ - ЛОГО)
+   3. МОБІЛЬНА ВЕРСІЯ (МЕНЮ ЗЛІВА - МОВИ ЦЕНТР - ЛОГО СПРАВА)
    =================================================== */
 @media (max-width: 950px) {
     .header-container {
         display: flex !important;
         justify-content: space-between !important;
-        position: relative; /* Для центрування мов */
     }
 
-    /* 1. МЕНЮ ПЕРШИМ (ЗЛІВА) */
+    /* 1. БУРГЕР ЗЛІВА */
     .menu-btn {
         display: block !important;
         order: 1 !important;
-        cursor: pointer;
-        font-size: 26px;
-        color: #f1c40f;
     }
 
-    /* 2. МОВИ ДРУГИМИ (ЦЕНТР) */
+    /* 2. МОВИ ЦЕНТР */
     .lang-select-center {
         order: 2 !important;
         position: absolute !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        display: flex !important;
     }
 
-    /* 3. ЛОГО ТРЕТІМ (СПРАВА) */
+    /* 3. ЛОГО СПРАВА */
     .logo {
         order: 3 !important;
         font-size: 18px !important;
         margin: 0 !important;
     }
 
-    /* ПРИХОВАНА НАВІГАЦІЯ */
+    /* НАВІГАЦІЯ (СПИСОК) */
     .desktop-nav {
-        display: none; /* Ховаємо список посилань */
+        display: none !important; /* Ховаємо стандартну плашку */
         flex-direction: column;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
-        background: rgba(15, 40, 40, 0.98);
+        background: rgba(15, 35, 35, 0.98);
         padding: 10px 0;
-        z-index: 1001;
+        z-index: 3000;
         border-bottom: 2px solid #f1c40f;
     }
 
-    /* КЛАС ДЛЯ ВІДКРИТТЯ (JS) */
+    /* ЦЕЙ КЛАС АКТИВУЄ МЕНЮ ПРИ КЛІКУ */
     .desktop-nav.active {
         display: flex !important;
     }
@@ -134,21 +137,22 @@ body {
         text-align: center;
         padding: 15px;
         border-bottom: 1px solid rgba(255,255,255,0.1);
+        font-size: 16px;
     }
 }
 
 /* ===================================================
-   4. КОНТЕНТ ТА КНОПКИ (УНІВЕРСАЛЬНО)
+   4. КОНТЕНТ (УНІВЕРСАЛЬНО)
    =================================================== */
 .content-area, .hero-glass-card {
     background: rgba(0, 0, 0, 0.6) !important; 
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
-    margin: 40px auto;
-    padding: 40px 20px;
-    max-width: 1100px;
+    margin: 30px auto;
+    padding: 35px 20px;
     width: 95%;
+    max-width: 1100px;
     text-align: center;
 }
 
@@ -156,12 +160,14 @@ body {
     background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%) !important;
     color: #000 !important;
     font-weight: 800;
-    padding: 15px 30px;
+    padding: 14px 28px;
     border-radius: 50px;
     text-decoration: none;
     display: inline-block;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
     .main-btn { width: 100%; }
 }
+
