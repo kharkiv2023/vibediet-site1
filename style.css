@@ -379,3 +379,121 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         padding-left: 50px; /* Відступ для вкладених пунктів */
     }
 }
+/* Мобільна версія (до 950px) */
+@media (max-width: 950px) {
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Ставимо кнопку вліво */
+    .menu-btn {
+        display: block !important; /* Показуємо на мобілці */
+        order: 1; 
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+        color: white;
+    }
+
+    /* Ставимо логотип вправо */
+    .logo {
+        order: 2;
+        margin-left: auto; /* Штовхає лого вправо */
+    }
+
+    /* Налаштування самого меню */
+    .desktop-nav {
+        display: none; /* Сховано за замовчуванням */
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 250px; /* Меню виїжджає зліва */
+        height: 100vh;
+        background: rgba(20, 50, 50, 0.95);
+        flex-direction: column;
+        padding-top: 20px;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Клас, який додає JavaScript при кліку */
+    .desktop-nav.active {
+        display: flex !important;
+    }
+
+    .desktop-nav a {
+        padding: 15px 25px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* На ПК ховаємо кнопку меню */
+@media (min-width: 951px) {
+    .menu-btn {
+        display: none;
+    }
+}
+/* --- СТИЛІ ДЛЯ ПК (понад 950px) --- */
+@media (min-width: 951px) {
+    .menu-btn {
+        display: none !important; /* Ховаємо гамбургер на комп'ютері */
+    }
+
+    .desktop-nav {
+        display: flex !important; /* ПРИМУСОВО показуємо меню на комп'ютері */
+        flex-direction: row;      /* В рядок */
+        position: static;         /* Скасовуємо мобільне позиціонування */
+        background: transparent;
+        width: auto;
+        height: auto;
+    }
+}
+
+/* --- СТИЛІ ДЛЯ МОБІЛЬНИХ (до 950px) --- */
+@media (max-width: 950px) {
+    .menu-btn {
+        display: block !important; /* Показуємо гамбургер */
+        cursor: pointer;
+    }
+
+    .desktop-nav {
+        display: none; /* Ховаємо до натискання */
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        flex-direction: column; /* У стовпчик */
+        background: rgba(20, 50, 50, 0.98);
+        z-index: 999;
+    }
+
+    .desktop-nav.active {
+        display: flex !important; /* Показуємо при кліку */
+    }
+}
+/* --- МОБІЛЬНА ВЕРСІЯ (до 768px) --- */
+@media screen and (max-width: 768px) {
+    .header-container {
+        padding: 10px 15px;
+    }
+
+    #side-nav {
+        width: 100%; /* Меню на весь екран */
+        right: -100%;
+    }
+
+    .desktop-nav {
+        display: none; /* Ховаємо звичайне меню */
+    }
+
+    /* Адаптуємо калькулятор для вузьких екранів */
+    .calc-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
