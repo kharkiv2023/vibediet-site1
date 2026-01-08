@@ -549,4 +549,55 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         display: none;
     }
 }
+/* --- СТИЛІ ДЛЯ ПК (НЕ ПОРТЯТЬ ВИГЛЯД) --- */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Або ваша ширина */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Приховуємо кнопку на комп'ютерах */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+/* --- МОБІЛЬНА ВЕРСІЯ (ДО 950px) --- */
+@media (max-width: 950px) {
+    .menu-btn {
+        display: block; /* Показуємо кнопку */
+        padding: 5px;   /* Щоб не обрізало краї */
+        z-index: 1001;
+    }
+
+    .desktop-nav {
+        display: none; /* Ховаємо стандартне меню */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background: #143232; /* Ваш колір */
+        padding-top: 80px;
+        transition: 0.3s;
+    }
+
+    .desktop-nav.active {
+        display: flex !important; /* Показуємо при кліку */
+    }
+
+    /* Щоб мови на мобільці не розтягували меню */
+    .lang-select {
+        margin: 20px 0 0 20px;
+        display: block !important;
+    }
+}
 
