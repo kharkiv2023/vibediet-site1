@@ -515,3 +515,38 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         left: 0 !important; 
     }
 }
+@media (max-width: 950px) {
+    /* Ховаємо меню за межі екрану зліва */
+    .desktop-nav {
+        display: none; /* Або використовуйте flex та left: -100% */
+        flex-direction: column;
+        position: fixed;
+        top: 70px; /* Висота вашої шапки */
+        left: 0;
+        width: 100%;
+        background-color: rgba(20, 50, 50, 0.98);
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    /* КОЛИ ДОДАЄТЬСЯ КЛАС ACTIVE (через JS) — ПОКАЗУЄМО МЕНЮ */
+    .desktop-nav.active {
+        display: flex !important;
+    }
+
+    /* Показуємо кнопку бургера на мобілці */
+    .menu-btn {
+        display: block !important;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+    }
+}
+
+/* На комп'ютерах ховаємо кнопку бургера */
+@media (min-width: 951px) {
+    .menu-btn {
+        display: none;
+    }
+}
+
