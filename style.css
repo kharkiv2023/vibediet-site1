@@ -343,23 +343,24 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
 
     /* Саме меню - приховане за замовчуванням */
     .desktop-nav {
-        display: none;
         position: fixed;
         top: 70px;
-        left: 0;
-        width: 250px;
-        height: 100vh;
+        left: -280px; /* Приховане зліва за екраном */
+        width: 280px; /* Ширина бічного меню */
+        height: calc(100vh - 70px);
         background: rgba(20, 50, 50, 0.98);
         flex-direction: column;
         padding-top: 20px;
         z-index: 999;
         backdrop-filter: blur(10px);
         overflow-y: auto;
+        transition: left 0.3s ease; /* Плавна анімація виїзду */
+        display: flex; /* Завжди flex, але зсунуте */
     }
 
-    /* Показуємо меню при активації */
+    /* Показуємо меню при активації - виїжджає зліва */
     .desktop-nav.active {
-        display: flex !important;
+        left: 0; /* Виїжджає на екран */
     }
 
     /* Стилі посилань у мобільному меню */
@@ -392,8 +393,10 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         padding: 10px 15px;
     }
 
+    /* На малих екранах меню трохи ширше */
     .desktop-nav {
-        width: 100%; /* На малих екранах меню на всю ширину */
+        width: 70%; /* 70% ширини екрану, щоб бачити контент позаду */
+        max-width: 320px;
     }
 
     .content-area, .how-it-works, .faq-section, .benefits-dark {
