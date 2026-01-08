@@ -62,40 +62,41 @@
 <body>
 
     <header class="top-header">
-        <div class="header-container">
-            <div class="logo">
-                <i class="fa-solid fa-heart-pulse"></i> SmartDiet
+    <div class="header-container">
+        <div class="logo">
+            <i class="fa-solid fa-heart-pulse"></i> SmartDiet
+        </div>
+        
+        <nav class="desktop-nav" id="side-nav">
+            <a href="index.html" class="active">Головна</a>
+            
+            <div class="dropdown">
+                <a href="diabetes.html" class="dropdown-toggle">Діабет <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
+                <div class="dropdown-menu">
+                    <a href="diabetes.html">Дієта при цукровому діабеті 2 типу</a>
+                    <a href="diabetes-menu.html">Меню при діабеті 2 типу</a>
+                    <a href="glycemic-index.html">Глікемічний індекс таблиця</a>
+                    <a href="diabetes-forbidden.html">Що не можна їсти при діабеті</a>
+                    <a href="table-9-menu.html">Стіл №9 меню</a>
+                </div>
             </div>
             
-            <nav class="desktop-nav" id="side-nav">
-                <a href="index.html" class="active">Головна</a>
-                
-                <div class="dropdown">
-                    <a href="diabetes.html" class="dropdown-toggle">Діабет <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="diabetes.html">Дієта при цукровому діабеті 2 типу</a>
-                        <a href="diabetes-menu.html">Меню при діабеті 2 типу</a>
-                        <a href="glycemic-index.html">Глікемічний індекс таблиця</a>
-                        <a href="diabetes-forbidden.html">Що не можна їсти при діабеті</a>
-                        <a href="table-9-menu.html">Стіл №9 меню</a>
-                    </div>
-                </div>
-                <a href="lose.html">Схуднення</a>
-                <a href="gain.html">Набір маси</a>
-                <a href="maintain.html">Підтримка форми</a> 
-				<div class="lang-select" style="display: inline-block; margin-left: 15px;">
-    <div class="lang-select" style="display: inline-block; margin-left: 15px;">
-    <a href="javascript:void(0)" onclick="changeLanguage('')" style="font-weight: bold;">UA</a> | 
-    <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a> | 
-    <a href="javascript:void(0)" onclick="changeLanguage('fr')">FR</a>
-</div>
-            </nav>
+            <a href="lose.html">Схуднення</a>
+            <a href="gain.html">Набір маси</a>
+            <a href="maintain.html">Підтримка форми</a> 
 
-            <div class="menu-btn" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <div class="lang-select" style="display: inline-block; margin-left: 15px;">
+                <a href="javascript:void(0)" onclick="changeLanguage('')" style="font-weight: bold;">UA</a> | 
+                <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a> | 
+                <a href="javascript:void(0)" onclick="changeLanguage('fr')">FR</a>
             </div>
+        </nav>
+
+        <div class="menu-btn" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
         </div>
-    </header>
+    </div>
+</header>
 <style>
     .hero-glass-card {
         /* Напівпрозорий темний фон для кращого контрасту з білим текстом */
