@@ -132,4 +132,19 @@ function calculateCalories() {
         document.getElementById('calories-out').textContent = calories;
         resDiv.scrollIntoView({ behavior: 'smooth' });
     }
+
 }
+document.addEventListener('DOMContentLoaded', function () {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const sideNav = document.getElementById('side-nav');
+
+    if (menuBtn && sideNav) {
+        menuBtn.onclick = function(e) {
+            console.log("Кнопка натиснута!"); // Це для перевірки
+            e.stopPropagation();
+            sideNav.classList.toggle('active');
+        };
+    } else {
+        console.error("Елементи меню не знайдено! Перевірте ID в HTML.");
+    }
+});
