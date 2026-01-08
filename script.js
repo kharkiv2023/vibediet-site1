@@ -1,27 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* --- 1. МОБІЛЬНЕ МЕНЮ (ОДИН ОБРОБНИК) --- */
+   /* --- 1. МОБІЛЬНЕ МЕНЮ --- */
     const menuBtn = document.getElementById('mobile-menu-btn');
-    const sideNav = document.getElementById('side-nav');
-    const navLinks = document.querySelectorAll('.desktop-nav a, #side-nav a');
+    const desktopNav = document.querySelector('.desktop-nav');
+    const navLinks = document.querySelectorAll('.desktop-nav a');
 
-    if (menuBtn && sideNav) {
+    if (menuBtn && desktopNav) {
+        // Відкриття/закриття меню
         menuBtn.addEventListener('click', function(e) {
             e.stopPropagation();
-            sideNav.classList.toggle('active');
+            desktopNav.classList.toggle('active');
         });
 
         // Закривати при кліку на посилання
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                sideNav.classList.remove('active');
+                desktopNav.classList.remove('active');
             });
         });
 
-        // Закривати, якщо клікнули повз меню
+        // Закривати, якщо клікнули поза меню
         document.addEventListener('click', (e) => {
-            if (!sideNav.contains(e.target) && !menuBtn.contains(e.target)) {
-                sideNav.classList.remove('active');
+            if (!desktopNav.contains(e.target) && !menuBtn.contains(e.target)) {
+                desktopNav.classList.remove('active');
             }
         });
     }
@@ -132,19 +133,4 @@ function calculateCalories() {
         document.getElementById('calories-out').textContent = calories;
         resDiv.scrollIntoView({ behavior: 'smooth' });
     }
-
 }
-document.addEventListener('DOMContentLoaded', function () {
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const sideNav = document.getElementById('side-nav');
-
-    if (menuBtn && sideNav) {
-        menuBtn.onclick = function(e) {
-            console.log("Кнопка натиснута!"); // Це для перевірки
-            e.stopPropagation();
-            sideNav.classList.toggle('active');
-        };
-    } else {
-        console.error("Елементи меню не знайдено! Перевірте ID в HTML.");
-    }
-});
