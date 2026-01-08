@@ -318,3 +318,64 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
     .offer-card { transform: scale(1) !important; min-width: 100%; }
     .slider-group { max-width: 100% !important; }
 }
+/* Стилі тільки для мобільних пристроїв (до 950px) */
+@media (max-width: 950px) {
+    
+    /* 1. Міняємо порядок: меню зліва, лого зправа */
+    .header-container {
+        display: flex;
+        flex-direction: row-reverse; /* Розвертає елементи в зворотний бік */
+        justify-content: space-between;
+    }
+
+    /* 2. Налаштування кнопки меню (гамбургера) */
+    .menu-btn {
+        display: block; /* Показуємо кнопку */
+        font-size: 24px;
+        color: #ffffff;
+        cursor: pointer;
+        order: 2; /* Примусово ставимо вліво через flex-direction: row-reverse */
+    }
+
+    .logo {
+        order: 1; /* Примусово ставимо вправо */
+    }
+
+    /* 3. Перетворюємо горизонтальне меню на вертикальне випадаюче */
+    .desktop-nav {
+        display: none; /* Сховано за замовчуванням */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(20, 50, 50, 0.98);
+        flex-direction: column;
+        padding: 20px 0;
+        border-bottom: 2px solid #f1c40f;
+    }
+
+    /* Показуємо меню, коли додано клас .active (через JS) */
+    .desktop-nav.active {
+        display: flex;
+    }
+
+    .desktop-nav a {
+        width: 100%;
+        text-align: left;
+        padding: 15px 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* 4. Випадаючі списки всередині мобільного меню */
+    .dropdown-menu {
+        position: static; /* Відміняємо абсолютне позиціонування */
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: none;
+        width: 100%;
+    }
+    
+    .dropdown-menu a {
+        color: #f1c40f !important;
+        padding-left: 50px; /* Відступ для вкладених пунктів */
+    }
+}

@@ -167,3 +167,13 @@ function changeLanguage(lang) {
 
     window.location.href = newPath;
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const nav = document.getElementById('side-nav');
+
+    if (menuBtn && nav) {
+        menuBtn.addEventListener('click', function() {
+            nav.classList.toggle('active'); // Додає/видаляє клас active при кліку
+        });
+    }
+});
