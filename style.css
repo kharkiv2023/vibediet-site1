@@ -1,5 +1,5 @@
 /* ===================================================
-   1. ОСНОВНІ НАЛАШТУВАННЯ ТА ФОН
+   1. ОСНОВНІ НАЛАШТУВАННЯ
    =================================================== */
 * {
     box-sizing: border-box;
@@ -12,24 +12,18 @@ body {
     color: #ffffff;
     padding-top: 70px;
     line-height: 1.6;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                      url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2000');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     background-color: #1a1a1a; 
 }
 
 /* ===================================================
-   2. ШАПКА (ПК ВЕРСІЯ)
+   2. ШАПКА (ДЕСКТОП ТА ЗАГАЛЬНІ СТИЛІ)
    =================================================== */
 .top-header {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 70px;
-    background-color: rgba(20, 50, 50, 0.95) !important; 
+    background-color: rgba(20, 50, 50, 0.98) !important; 
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 2000;
+    z-index: 9999; /* Максимальний пріоритет */
     display: flex;
     align-items: center;
 }
@@ -46,18 +40,18 @@ body {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    z-index: 10;
 }
 
 .desktop-nav {
     display: flex;
-    align-items: center;
     gap: 15px;
 }
 
@@ -67,38 +61,33 @@ body {
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
-    transition: 0.3s;
 }
 
-.desktop-nav a:hover { color: #f1c40f !important; }
-
-/* Приховуємо кнопку бургера на ПК */
-.menu-btn { 
-    display: none; 
+/* Кнопка бургера */
+.menu-btn {
+    display: none;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 30px; /* Трохи більша для зручності */
     color: #f1c40f;
+    z-index: 10000; /* Вище за всі елементи */
+    pointer-events: auto !important; /* Гарантує клікабельність */
+    padding: 5px;
 }
 
-.lang-select-center { display: flex; gap: 10px; }
-.lang-select-center a { color: #fff; text-decoration: none; font-weight: bold; }
+.lang-select-center { display: flex; gap: 12px; z-index: 10; }
+.lang-select-center a { color: #fff; text-decoration: none; font-weight: bold; font-size: 15px; }
 
 /* ===================================================
-   3. МОБІЛЬНА ВЕРСІЯ (МЕНЮ ЗЛІВА - МОВИ ЦЕНТР - ЛОГО СПРАВА)
+   3. МОБІЛЬНА ВЕРСІЯ (ПЕРЕСТАНОВКА + РОБОЧЕ МЕНЮ)
    =================================================== */
 @media (max-width: 950px) {
-    .header-container {
-        display: flex !important;
-        justify-content: space-between !important;
-    }
-
-    /* 1. БУРГЕР ЗЛІВА */
+    
+    /* Розставляємо: Меню(1) - Мови(2) - Лого(3) */
     .menu-btn {
         display: block !important;
         order: 1 !important;
     }
 
-    /* 2. МОВИ ЦЕНТР */
     .lang-select-center {
         order: 2 !important;
         position: absolute !important;
@@ -106,28 +95,26 @@ body {
         transform: translateX(-50%) !important;
     }
 
-    /* 3. ЛОГО СПРАВА */
     .logo {
         order: 3 !important;
         font-size: 18px !important;
-        margin: 0 !important;
     }
 
-    /* НАВІГАЦІЯ (СПИСОК) */
+    /* Стиль списку меню, що випадає */
     .desktop-nav {
-        display: none !important; /* Ховаємо стандартну плашку */
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: rgba(15, 35, 35, 0.98);
-        padding: 10px 0;
-        z-index: 3000;
+        display: none !important; /* Ховаємо стандартну лінію */
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 70px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #143232 !important;
+        padding: 20px 0 !important;
         border-bottom: 2px solid #f1c40f;
+        z-index: 9998 !important;
     }
 
-    /* ЦЕЙ КЛАС АКТИВУЄ МЕНЮ ПРИ КЛІКУ */
+    /* АКТИВАЦІЯ КЛАСОМ .active (через JS) */
     .desktop-nav.active {
         display: flex !important;
     }
@@ -135,39 +122,18 @@ body {
     .desktop-nav a {
         width: 100%;
         text-align: center;
-        padding: 15px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        font-size: 16px;
+        padding: 18px;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 }
 
-/* ===================================================
-   4. КОНТЕНТ (УНІВЕРСАЛЬНО)
-   =================================================== */
-.content-area, .hero-glass-card {
-    background: rgba(0, 0, 0, 0.6) !important; 
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    margin: 30px auto;
-    padding: 35px 20px;
+/* СТИЛІ ДЛЯ КАРТОК ТА КНОПОК */
+.content-area {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 25px;
+    padding: 30px 15px;
+    margin: 20px auto;
     width: 95%;
-    max-width: 1100px;
     text-align: center;
 }
-
-.main-btn {
-    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%) !important;
-    color: #000 !important;
-    font-weight: 800;
-    padding: 14px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-    .main-btn { width: 100%; }
-}
-
