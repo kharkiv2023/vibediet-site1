@@ -361,37 +361,13 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
     }
 
     /* 3. Адаптація контенту та калькулятора */
-    .content-area, .hero-glass-card, .how-it-works, .benefits-dark {
-        padding: 20px 15px !important;
-        width: 96% !important;
-        margin: 15px auto !important;
-    }
+    /* --- ФІНАЛЬНЕ ВИПРАВЛЕННЯ ШАПКИ (МЕНЮ - МОВИ - ЛОГО) --- */
 
-    .hero-glass-card h2, h1 {
-        font-size: 1.6rem !important;
-    }
-
-    /* Кнопки вибору мети та активності в один стовпчик */
-    .goal-selection, .activity-container > div {
-        grid-template-columns: 1fr !important;
-        gap: 8px !important;
-    }
-
-    .stat-card {
-        min-width: 100% !important; /* Статистика в стовпчик */
-        margin-bottom: 10px;
-    }
-
-    .main-btn {
-        width: 100%; /* Кнопка розрахунку на весь екран */
-    }
-}
-.header-container {
-    display: flex;
-    justify-content: space-between; /* Розподіляє ліво-центр-право */
-    align-items: center;
-    width: 100%;
-    padding: 0 15px;
+.menu-btn { 
+    display: none; 
+    cursor: pointer;
+    font-size: 24px;
+    color: #f1c40f;
 }
 
 .lang-select-center {
@@ -407,35 +383,63 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
     padding: 5px;
 }
 
-/* Налаштування для мобілок (менше 950px) */
 @media (max-width: 950px) {
-    .logo {
-        font-size: 18px !important; /* Трохи менший шрифт, щоб влізло */
-        order: 3;
-    }
-    
-    .lang-select-center {
-        order: 2;
+    .header-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        position: relative; /* Для центрування мов */
     }
 
+    /* 1. Кнопка меню ЗЛІВА */
     .menu-btn {
-        order: 1;
         display: block !important;
+        order: 1 !important;
     }
 
-    /* Навігація випадає зверху по всій ширині */
+    /* 2. Мови строго по ЦЕНТРУ */
+    .lang-select-center {
+        order: 2 !important;
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    /* 3. Логотип СПРАВА */
+    .logo {
+        display: flex !important;
+        order: 3 !important;
+        font-size: 18px !important;
+        margin: 0 !important;
+    }
+
+    /* Випадаюче меню */
     .desktop-nav {
+        display: none;
+        flex-direction: column;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
         background: rgba(20, 50, 50, 0.98);
-        flex-direction: column;
-        display: none; /* Ховаємо */
+        backdrop-filter: blur(15px);
+        z-index: 999;
     }
 
     .desktop-nav.active {
-        display: flex !important; /* Показуємо при кліку */
+        display: flex !important;
+    }
+
+    /* Адаптація контенту калькулятора */
+    .content-area, .hero-glass-card {
+        padding: 20px 15px !important;
+        width: 96% !important;
+    }
+
+    .goal-selection, .activity-container > div {
+        grid-template-columns: 1fr !important;
+    }
+
+    .main-btn {
+        width: 100%;
     }
 }
-
