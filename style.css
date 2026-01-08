@@ -496,4 +496,22 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         flex-direction: column;
         padding: 10px;
     }
+
+}
+@media (max-width: 950px) {
+    .desktop-nav {
+        display: flex !important; /* Замість none */
+        position: fixed;
+        top: 70px;
+        left: -280px; /* Ховаємо меню за ліву межу екрана */
+        width: 280px;
+        height: 100vh;
+        transition: 0.4s ease; /* Додаємо плавність руху */
+        z-index: 1050;
+    }
+
+    /* Коли меню активне, воно стає на позицію 0 (лівий край) */
+    .desktop-nav.active {
+        left: 0 !important; 
+    }
 }
