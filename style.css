@@ -386,3 +386,56 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         width: 100%; /* Кнопка розрахунку на весь екран */
     }
 }
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Розподіляє ліво-центр-право */
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.lang-select-center {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lang-select-center a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* Налаштування для мобілок (менше 950px) */
+@media (max-width: 950px) {
+    .logo {
+        font-size: 18px !important; /* Трохи менший шрифт, щоб влізло */
+        order: 3;
+    }
+    
+    .lang-select-center {
+        order: 2;
+    }
+
+    .menu-btn {
+        order: 1;
+        display: block !important;
+    }
+
+    /* Навігація випадає зверху по всій ширині */
+    .desktop-nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(20, 50, 50, 0.98);
+        flex-direction: column;
+        display: none; /* Ховаємо */
+    }
+
+    .desktop-nav.active {
+        display: flex !important; /* Показуємо при кліку */
+    }
+}
+
