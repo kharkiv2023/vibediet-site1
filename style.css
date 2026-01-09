@@ -12,13 +12,13 @@ body {
     color: #ffffff;
     padding-top: 70px;
     line-height: 1.6;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
                       url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2000');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-color: #1a1a1a; 
+    background-color: #1a1a1a;
 }
 
 /* ===================================================
@@ -27,7 +27,7 @@ body {
 .top-header {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 70px;
-    background-color: rgba(20, 50, 50, 0.95) !important; 
+    background-color: rgba(20, 50, 50, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -62,7 +62,7 @@ body {
 
 .desktop-nav a {
     text-decoration: none;
-    color: #ffffff !important;
+    color: #ffffff;
     font-weight: 600;
     padding: 10px 15px;
     font-size: 14px;
@@ -74,16 +74,20 @@ body {
 
 .desktop-nav a:hover {
     opacity: 1;
-    color: #f1c40f !important;
+    color: #f1c40f;
 }
 
 /* DROPDOWN */
-.dropdown { position: relative; display: inline-block; }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; left: 0;
+    top: 100%;
+    left: 0;
     background-color: #ffffff;
     min-width: 220px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
@@ -94,7 +98,7 @@ body {
 }
 
 .dropdown-menu a {
-    color: #2c3e50 !important;
+    color: #2c3e50;
     padding: 12px 20px;
     display: block;
     text-transform: none;
@@ -104,22 +108,24 @@ body {
 
 .dropdown-menu a:hover {
     background-color: #f8f9fa;
-    color: #e74c3c !important;
+    color: #e74c3c;
 }
 
-.dropdown:hover .dropdown-menu { display: block; }
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
 
 /* ===================================================
    3. КОНТЕНТ-БЛОКИ (ТЕМНЕ СКЛО)
    =================================================== */
 .content-area, .how-it-works, .faq-section, .benefits-dark, .glass-section {
-    background: rgba(0, 0, 0, 0.6) !important; 
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
-    margin: 40px auto !important;
-    padding: 40px 20px !important;
+    margin: 40px auto;
+    padding: 40px 20px;
     max-width: 1100px;
     width: 95%;
     display: flex;
@@ -129,70 +135,73 @@ body {
 }
 
 .container {
-    background: transparent !important;
-    box-shadow: none !important;
+    background: transparent;
+    box-shadow: none;
     width: 100%;
-    padding: 0 !important;
+    padding: 0;
 }
 
 /* ===================================================
    4. ТЕКСТИ ТА ЗАГОЛОВКИ
    =================================================== */
 h1, h2, .section-title, .section-title-light, .glass-title {
-    color: #f1c40f !important;
+    color: #f1c40f;
     text-align: center;
     margin-bottom: 25px;
 }
 
 p, label, .subtitle, .slider-header label {
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* ===================================================
    5. ЕЛЕМЕНТИ ФОРМ (КАЛЬКУЛЯТОР)
    =================================================== */
 .activity-card, .goal-label, .step, .benefit-card, .glass-faq {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 15px;
-    color: #fff !important;
+    color: #fff;
     transition: 0.3s;
 }
 
 input[type="radio"]:checked + .card-content,
 input[type="radio"]:checked + .goal-label {
-    background: #27ae60 !important;
-    border-color: #27ae60 !important;
-    color: white !important;
+    background: #27ae60;
+    border-color: #27ae60;
+    color: white;
 }
 
 .slider-group {
-    width: 100% !important;
-    max-width: 900px !important;
-    margin: 20px auto !important;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
 }
 
-.modern-slider { width: 100% !important; cursor: pointer; }
+.modern-slider {
+    width: 100%;
+    cursor: pointer;
+}
 
 #calc-form {
-    width: 100% !important;
-    max-width: 950px !important;
-    margin: 0 auto !important;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
     scroll-margin-top: 100px;
 }
 
 .slider-value {
-    background: #f1c40f !important;
-    color: #000 !important;
+    background: #f1c40f;
+    color: #000;
     padding: 2px 12px;
     border-radius: 10px;
     font-weight: bold;
 }
 
 #result {
-    background: rgba(0, 0, 0, 0.8) !important;
-    border: 2px solid #f1c40f !important;
-    color: white !important;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #f1c40f;
+    color: white;
     padding: 30px;
     border-radius: 20px;
     margin-top: 20px;
@@ -202,27 +211,42 @@ input[type="radio"]:checked + .goal-label {
    6. КАРТКИ ТАРИФІВ
    =================================================== */
 .menu-offer-section {
-    display: flex; gap: 30px; justify-content: center;
-    align-items: stretch; flex-wrap: wrap;
-    margin: 40px auto; max-width: 1000px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1000px;
 }
 
 .offer-card {
-    flex: 1; min-width: 300px; max-width: 350px;
-    background: #ffffff !important;
-    border-radius: 20px; padding: 30px;
-    color: #2d3436 !important;
-    display: flex; flex-direction: column;
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    color: #2d3436;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    transition: 0.3s; border: 1px solid #eee;
+    transition: 0.3s;
+    border: 1px solid #eee;
 }
 
-.offer-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
 
-.offer-card.premium-card { border: 3px solid #f1c40f; transform: scale(1.05); }
+.offer-card.premium-card {
+    border: 3px solid #f1c40f;
+    transform: scale(1.05);
+}
 
 .price {
-    font-weight: 800 !important;
+    font-weight: 800;
     font-size: 1.2rem;
     color: #2c3e50;
     margin: 15px 0;
@@ -232,83 +256,160 @@ input[type="radio"]:checked + .goal-label {
    7. HERO СЕКЦІЯ (ГОЛОВНА)
    =================================================== */
 .hero-home {
-    display: flex; justify-content: center; align-items: center;
-    min-height: 70vh; padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 40px 20px;
 }
 
 .hero-glass-card {
-    background: rgba(0, 0, 0, 0.7) !important;
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     padding: 30px 40px;
-    max-width: 1100px; width: 95%;
-    margin: 20px auto; text-align: center;
+    max-width: 1100px;
+    width: 95%;
+    margin: 20px auto;
+    text-align: center;
 }
 
-.hero-glass-card h1 { font-size: 2rem !important; color: #f1c40f !important; }
+.hero-glass-card h1 {
+    font-size: 2rem;
+    color: #f1c40f;
+}
 
 .hero-subtitle {
-    display: inline-block; text-align: left;
-    margin-bottom: 20px !important; font-size: 1rem !important; color: #ffffff;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #ffffff;
 }
 
-.hero-stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 40px; }
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.1); padding: 10px 15px !important;
-    border-radius: 20px; min-width: 140px !important;
-    display: flex; flex-direction: column; align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 20px;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.stat-card strong { font-size: 18px !important; color: #f1c40f; }
+.stat-card strong {
+    font-size: 18px;
+    color: #f1c40f;
+}
 
 /* ===================================================
    8. ВІДГУКИ ТА ФОРМИ (СКЛО)
    =================================================== */
 .glass-review {
-    background: rgba(0, 0, 0, 0.6) !important;
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 30px; border-radius: 20px;
+    padding: 30px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    color: white !important; margin-top: 40px;
+    color: white;
+    margin-top: 40px;
 }
 
-.glass-review input, .glass-review textarea, .glass-review select, .glass-input {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 8px; padding: 12px;
-    color: white !important; width: 100%; outline: none;
+.glass-review input,
+.glass-review textarea,
+.glass-review select,
+.glass-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    width: 100%;
+    outline: none;
 }
 
 /* ===================================================
    9. КОЛЬОРОВІ БЛОКИ (ДІАБЕТ)
    =================================================== */
-.box-ok { border: 2px solid #27ae60 !important; color: #27ae60 !important; background: rgba(39, 174, 96, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 15px; font-weight: 600; }
-.box-warn { border: 2px solid #f39c12 !important; color: #d35400 !important; background: rgba(243, 156, 18, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 15px; font-weight: 600; }
-.box-bad, .box-forbidden { border: 2px solid #e74c3c !important; color: #e74c3c !important; background: rgba(231, 76, 60, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 15px; font-weight: 600; }
+.box-ok {
+    border: 2px solid #27ae60;
+    color: #27ae60;
+    background: rgba(39, 174, 96, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.box-warn {
+    border: 2px solid #f39c12;
+    color: #d35400;
+    background: rgba(243, 156, 18, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.box-bad,
+.box-forbidden {
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
 
 /* ===================================================
    10. КНОПКИ ТА ФУТЕР
    =================================================== */
-.main-btn, .buy-btn, .cta-scroll {
-    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%) !important;
-    color: #000 !important; font-weight: 800; text-transform: uppercase;
-    border: none; border-radius: 50px; padding: 15px 30px;
-    cursor: pointer; transition: 0.3s; text-decoration: none;
+.main-btn,
+.buy-btn,
+.cta-scroll {
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    color: #000;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
 }
 
 footer {
-    text-align: center; padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.7) !important;
-    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-    color: white; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: white;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-decoration: none; display: inline-block; }
+footer a {
+    color: #f1c40f;
+    margin: 0 15px;
+    font-size: 24px;
+    text-decoration: none;
+    display: inline-block;
+}
 
 /* ===================================================
    11. АДАПТИВНІСТЬ
@@ -317,11 +418,11 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
 /* --- ДЛЯ ПК (понад 950px) --- */
 @media (min-width: 951px) {
     .menu-btn {
-        display: none !important;
+        display: none;
     }
 
     .desktop-nav {
-        display: flex !important;
+        display: flex;
         flex-direction: row;
         position: static;
         background: transparent;
@@ -332,21 +433,19 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
 
 /* --- ДЛЯ МОБІЛЬНИХ (до 950px) --- */
 @media (max-width: 950px) {
-    /* Кнопка меню - показуємо */
     .menu-btn {
-        display: block !important;
+        display: block;
         font-size: 24px;
         color: #ffffff;
         cursor: pointer;
         z-index: 1001;
     }
 
-    /* Саме меню - приховане за замовчуванням */
     .desktop-nav {
         position: fixed;
         top: 70px;
-        left: -280px; /* Приховане зліва за екраном */
-        width: 280px; /* Ширина бічного меню */
+        left: -100%;
+        width: 280px;
         height: calc(100vh - 70px);
         background: rgba(20, 50, 50, 0.98);
         flex-direction: column;
@@ -354,16 +453,14 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         z-index: 999;
         backdrop-filter: blur(10px);
         overflow-y: auto;
-        transition: left 0.3s ease; /* Плавна анімація виїзду */
-        display: flex; /* Завжди flex, але зсунуте */
+        transition: left 0.4s ease;
+        display: flex;
     }
 
-    /* Показуємо меню при активації - виїжджає зліва */
     .desktop-nav.active {
-        left: 0; /* Виїжджає на екран */
+        left: 0;
     }
 
-    /* Стилі посилань у мобільному меню */
     .desktop-nav a {
         width: 100%;
         text-align: left;
@@ -371,7 +468,6 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Випадаючі підменю */
     .dropdown-menu {
         position: static;
         background: rgba(255, 255, 255, 0.05);
@@ -379,9 +475,9 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         width: 100%;
         padding: 0;
     }
-    
+
     .dropdown-menu a {
-        color: #f1c40f !important;
+        color: #f1c40f;
         padding-left: 50px;
         font-size: 13px;
     }
@@ -393,28 +489,29 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
         padding: 10px 15px;
     }
 
-    /* На малих екранах меню трохи ширше */
     .desktop-nav {
-        width: 70%; /* 70% ширини екрану, щоб бачити контент позаду */
+        width: 80%;           /* Зручніше на маленьких екранах */
         max-width: 320px;
     }
 
-    .content-area, .how-it-works, .faq-section, .benefits-dark {
-        padding: 20px 15px !important;
-        margin: 20px auto !important;
+    .content-area,
+    .how-it-works,
+    .faq-section,
+    .benefits-dark {
+        padding: 20px 15px;
+        margin: 20px auto;
     }
 
     .hero-glass-card h1 {
-        font-size: 1.8rem !important;
+        font-size: 1.8rem;
     }
 
     .offer-card {
-        transform: scale(1) !important;
         min-width: 100%;
     }
 
     .slider-group {
-        max-width: 100% !important;
+        max-width: 100%;
     }
 
     .hero-stats {
@@ -423,22 +520,6 @@ footer a { color: #f1c40f !important; margin: 0 15px; font-size: 24px; text-deco
     }
 
     .stat-card {
-        min-width: 100% !important;
-    }
-}
-
-    #side-nav {
-        width: 100%; /* Меню на весь екран */
-        right: -100%;
-    }
-
-    .desktop-nav {
-        display: none; /* Ховаємо звичайне меню */
-    }
-
-    /* Адаптуємо калькулятор для вузьких екранів */
-    .calc-container {
-        flex-direction: column;
-        padding: 10px;
+        min-width: 100%;
     }
 }

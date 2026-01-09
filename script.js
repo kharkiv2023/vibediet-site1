@@ -1,42 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-   /* --- 1. МОБІЛЬНЕ МЕНЮ --- */
+    // --- 1. МОБІЛЬНЕ МЕНЮ ---
     const menuBtn = document.getElementById('mobile-menu-btn');
     const desktopNav = document.querySelector('.desktop-nav');
-    const navLinks = document.querySelectorAll('.desktop-nav a');
 
     if (menuBtn && desktopNav) {
-        // Відкриття/закриття меню
-        menuBtn.addEventListener('click', function(e) {
+        menuBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             desktopNav.classList.toggle('active');
         });
 
-        // Закривати при кліку на посилання
+        const navLinks = document.querySelectorAll('.desktop-nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 desktopNav.classList.remove('active');
             });
         });
 
-        // Закривати, якщо клікнули поза меню
-        document.addEventListener('click', (e) => {
+        document.addEventListener('click', function (e) {
             if (!desktopNav.contains(e.target) && !menuBtn.contains(e.target)) {
                 desktopNav.classList.remove('active');
             }
         });
     }
 
-    /* --- 2. КАЛЬКУЛЯТОР ТА ПОВЗУНКИ --- */
+    // --- 2. СЛАЙДЕРИ КАЛЬКУЛЯТОРА ---
     const sliderIds = ['age', 'height', 'weight'];
     sliderIds.forEach(id => {
         const slider = document.getElementById(id);
         const output = document.getElementById(id + '-val');
         if (slider && output) {
-            slider.addEventListener('input', () => { output.textContent = slider.value; });
+            output.textContent = slider.value;
+            slider.addEventListener('input', function () {
+                output.textContent = this.value;
+            });
         }
     });
 
+    // Прив'язка кнопки "Розрахувати" (якщо вона всередині форми)
     const calcForm = document.getElementById('calc-form');
     if (calcForm) {
         calcForm.addEventListener('submit', function (e) {
@@ -44,93 +44,162 @@ document.addEventListener('DOMContentLoaded', function () {
             calculateCalories();
         });
     }
-
-    /* --- 3. ФОРМА ВІДГУКІВ --- */
-    const reviewForm = document.getElementById('review-form');
-    if (reviewForm) {
-        reviewForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const btn = reviewForm.querySelector('button');
-            btn.disabled = true;
-            btn.textContent = 'Відправка...';
-            try {
-                const response = await fetch(reviewForm.action, {
-                    method: 'POST',
-                    body: new FormData(reviewForm),
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    reviewForm.reset();
-                    reviewForm.style.display = 'none';
-                    document.getElementById('review-message').style.display = 'block';
-                }
-            } catch (err) {
-                alert('Помилка відправки.');
-                btn.disabled = false;
-            }
-        });
-    }
 });
 
-/* --- 4. ПЕРЕМИКАННЯ МОВ (ГЛОБАЛЬНА ФУНКЦІЯ) --- */
+// --- 3. ФУНКЦІЯ РОЗРАХУНКУ КАЛОРІЙ ---
+function calculateCalories() {
+    // Отримуємо значення
+    const ageEl = document.getElementById('age');
+    const heightEl = document.getElementById('height');
+    const weightEl = document.getElementById('weight');
+
+    if (!ageEl || !heightEl || !weightEl) return;
+
+    const age = parseInt(ageEl.value);
+    const height = parseInt(heightEl.value);
+    const weight = parseInt(weightEl.value);
+
+    // Отримуємо вибрані радіокнопки
+    const gender = document.querySelector('input[name="gender"]:checked')?.value || 'male';
+    const goal = document.querySelector('input[name="goal"]:checked')?.value || 'maintain';
+    const activity = parseFloat(document.querySelector('input[name="activity"]:checked')?.value || '1.2');
+
+    // Формула Міффліна-Сан Жеора
+    let bmr = 10 * weight + 6.25 * height - 5 * age;
+    if (gender === 'male') {
+        bmr += 5;
+    } else {
+        bmr -= 161;
+    }
+
+    let calories = Math.round(bmr * activity);
+
+    // Коригування під ціль
+    if (goal === 'lose') calories -= 400;
+    if (goal === 'gain') calories += 400;
+    
+    // Мінімальний поріг безпеки
+    if (calories < 1200) calories = 1200;
+
+    // Розрахунок БЖВ
+    let proteins, fats, carbs;
+    if (goal === 'diabetes') {
+        proteins = Math.round(calories * 0.30 / 4);
+        fats = Math.round(calories * 0.35 / 9);
+        carbs = Math.round(calories * 0.35 / 4);
+    } else if (goal === 'gain') {
+        proteins = Math.round(calories * 0.25 / 4);
+        fats = Math.round(calories * 0.30 / 9);
+        carbs = Math.round(calories * 0.45 / 4);
+    } else {
+        proteins = Math.round(calories * 0.25 / 4);
+        fats = Math.round(calories * 0.30 / 9);
+        carbs = Math.round(calories * 0.45 / 4);
+    }
+
+    // Відображення результатів
+    const resDiv = document.getElementById('result');
+    if (resDiv) {
+        document.getElementById('calories-out').textContent = calories;
+        document.getElementById('p-out').textContent = proteins + 'г';
+        document.getElementById('f-out').textContent = fats + 'г';
+        document.getElementById('c-out').textContent = carbs + 'г';
+
+        const resIcon = document.getElementById('res-icon');
+        const advice = document.getElementById('advice');
+
+        if (goal === 'lose') {
+            resIcon.textContent = '🔥';
+            advice.textContent = 'Безпечний дефіцит для схуднення';
+        } else if (goal === 'gain') {
+            resIcon.textContent = '💪';
+            advice.textContent = 'Профіцит для набору маси';
+        } else if (goal === 'diabetes') {
+            resIcon.textContent = '🩸';
+            advice.textContent = 'Контроль вуглеводів — пріоритет';
+        } else {
+            resIcon.textContent = '⚖️';
+            advice.textContent = 'Підтримка поточної ваги';
+        }
+
+        resDiv.style.display = 'block';
+        resDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+// --- 4. ПЕРЕМИКАННЯ МОВ ---
 function changeLanguage(lang) {
     let path = window.location.pathname;
     let page = path.split("/").pop() || "index.html";
-    
-    // Отримуємо масив частин шляху, видаляючи порожні елементи
-    let pathParts = path.split("/").filter(part => part !== "");
-    
-    // Видаляємо поточну мовну мітку (en або fr), якщо вона є перед назвою файлу
-    if (pathParts.length > 0 && (pathParts[pathParts.length - 2] === "en" || pathParts[pathParts.length - 2] === "fr")) {
-        pathParts.splice(pathParts.length - 2, 1);
-    } else if (pathParts.length > 0 && (pathParts[pathParts.length - 1] === "en" || pathParts[pathParts.length - 1] === "fr")) {
-         pathParts.pop();
-    }
+    if (page === "/") page = "index.html";
 
-    // Будуємо новий шлях
-    let newPath = "/";
-    
-    // Якщо вибрано не українську (корінь)
-    if (lang !== "") {
-        newPath += lang + "/";
+    let newPath = "";
+    if (lang === "" || lang === "ua") {
+        newPath = "/" + page;
+    } else {
+        newPath = "/" + lang + "/" + page;
     }
-    
-    // Додаємо назву сторінки (якщо ми не в корені сайту)
-    newPath += page;
-
     window.location.href = newPath;
 }
+function goToMenu() {
+    // 1. Шукаємо, яка ціль обрана в радіо-кнопках (name="goal")
+    const selectedGoal = document.querySelector('input[name="goal"]:checked');
 
-/* --- 5. ЕФЕКТ ШАПКИ --- */
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.top-header');
-    if (header) {
-        header.style.height = window.scrollY > 50 ? '60px' : '70px';
-        header.style.backgroundColor = window.scrollY > 50 ? 'rgba(20, 50, 50, 0.98)' : 'rgba(20, 50, 50, 0.95)';
+    if (!selectedGoal) {
+        alert("Будь ласка, спочатку оберіть ціль (схуднення, діабет тощо)");
+        return;
     }
-});
 
-// Функція розрахунку (винесена для чистоти)
-function calculateCalories() {
-    const age = +document.getElementById('age').value;
-    const height = +document.getElementById('height').value;
-    const weight = +document.getElementById('weight').value;
-    const gender = document.querySelector('input[name="gender"]:checked')?.value || 'male';
-    const goal = document.querySelector('input[name="goal"]:checked')?.value || 'lose';
-    const activity = parseFloat(document.querySelector('input[name="activity"]:checked')?.value || 1.2);
+    const goal = selectedGoal.value;
 
-    let bmr = (10 * weight) + (6.25 * height) - (5 * age);
-    bmr += (gender === 'male') ? 5 : -161;
-    let calories = Math.round(bmr * activity);
+    // 2. Визначаємо шлях залежно від мови (якщо ви використовуєте папки /en/ або /fr/)
+    let prefix = "";
+    if (window.location.pathname.includes('/en/')) prefix = "/en/";
+    else if (window.location.pathname.includes('/fr/')) prefix = "/fr/";
 
-    if (goal === 'lose') calories -= 400;
-    if (goal === 'gain') calories += 400;
-    calories = Math.max(calories, 1200);
+    // 3. Логіка перенаправлення
+    if (goal === 'diabetes') {
+        window.location.href = prefix + "diabetes.html";
+    } else if (goal === 'lose') {
+        window.location.href = prefix + "loss.html"; // або ваша назва файлу
+    } else if (goal === 'gain') {
+        window.location.href = prefix + "gain.html";
+    } else {
+        window.location.href = prefix + "maintenance.html";
+    }
+}
+function goToMenu() {
+    // 1. Отримуємо значення вибраної цілі
+    const selectedGoal = document.querySelector('input[name="goal"]:checked');
 
-    const resDiv = document.getElementById('result');
-    if (resDiv) {
-        resDiv.style.display = 'block';
-        document.getElementById('calories-out').textContent = calories;
-        resDiv.scrollIntoView({ behavior: 'smooth' });
+    if (!selectedGoal) {
+        alert("Please select a goal first!");
+        return;
+    }
+
+    const goal = selectedGoal.value;
+
+    // 2. Логіка назв файлів
+    const pages = {
+        'lose': 'lose.html',
+        'diabetes': 'diabetes.html',
+        'gain': 'gain.html',
+        'maintain': 'maintain.html'
+    };
+
+    const targetPage = pages[goal];
+
+    // 3. РОЗУМНЕ ПЕРЕНАПРАВЛЕННЯ
+    const currentPath = window.location.pathname;
+
+    if (currentPath.includes('/en/')) {
+        // Якщо ми вже в папці /en/, просто переходимо на файл у цій же папці
+        window.location.href = targetPage;
+    } else if (currentPath.includes('/fr/')) {
+        // Якщо ми в папці /fr/
+        window.location.href = targetPage;
+    } else {
+        // Якщо ми на головній (UA), переходимо від кореня
+        window.location.href = "/" + targetPage;
     }
 }

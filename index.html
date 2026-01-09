@@ -1,33 +1,10 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZZRFP01R7"></script>
-	<script>
-(function() {
-    // 1. Визначаємо мову браузера
-    var userLang = navigator.language || navigator.userLanguage; 
-    var langCode = userLang.substring(0, 2).toLowerCase(); 
-    
-    // 2. Перевіряємо, чи ми вже перенаправляли (щоб не було нескінченного циклу)
-    var alreadyRedirected = sessionStorage.getItem('lang_redirected');
-    
-    // 3. Отримуємо поточний шлях
-    var currentPath = window.location.pathname;
-
-    // Перевіряємо, чи користувач НЕ знаходиться вже в мовній папці /en/ або /fr/
-    var isInLangFolder = currentPath.startsWith('/en/') || currentPath.startsWith('/fr/');
-
-    if (!alreadyRedirected && !isInLangFolder) {
-        sessionStorage.setItem('lang_redirected', 'true');
-        
-        if (langCode === 'fr') {
-            window.location.href = '/fr' + (currentPath === '/' ? '/index.html' : currentPath);
-        } else if (langCode === 'en') {
-            window.location.href = '/en' + (currentPath === '/' ? '/index.html' : currentPath);
-        }
-    }
-})();
-</script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -35,13 +12,28 @@
       gtag('config', 'G-HZZRFP01R7');
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="yUEhQ4gc4F38slNbabB3xoVANOeG0erZrjBqyKrAsKI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Безкоштовний калькулятор калорій та БЖВ. Отримайте персональний план харчування для схуднення, набору маси або контролю діабету від SmartDiet.">
+    <script>
+    (function() {
+        var userLang = navigator.language || navigator.userLanguage; 
+        var langCode = userLang.substring(0, 2).toLowerCase(); 
+        var alreadyRedirected = sessionStorage.getItem('lang_redirected');
+        var currentPath = window.location.pathname;
+        var isInLangFolder = currentPath.startsWith('/en/') || currentPath.startsWith('/fr/');
+
+        if (!alreadyRedirected && !isInLangFolder) {
+            sessionStorage.setItem('lang_redirected', 'true');
+            if (langCode === 'fr') {
+                window.location.href = '/fr' + (currentPath === '/' || currentPath === '/index.html' ? '/index.html' : currentPath);
+            } else if (langCode === 'en') {
+                window.location.href = '/en' + (currentPath === '/' || currentPath === '/index.html' ? '/index.html' : currentPath);
+            }
+        }
+    })();
+    </script>
+
     <title>SmartDiet — Калькулятор калорій, меню при діабеті та схудненні</title>
-<meta name="description" content="Онлайн калькулятори харчування, глікемічного індексу та планування раціону. Інформаційні матеріали для контролю ваги та здорового способу життя.">
+    <meta name="description" content="Безкоштовний онлайн калькулятор калорій, БЖВ та глікемічного індексу. Отримайте персональний план харчування для схуднення або контролю діабету.">
+    <meta name="google-site-verification" content="yUEhQ4gc4F38slNbabB3xoVANOeG0erZrjBqyKrAsKI" />
 
     <meta property="og:title" content="SmartDiet — Твій персональний калькулятор здоров'я">
     <meta property="og:description" content="Розрахуйте норму калорій та отримайте меню для діабету або схуднення за 1 хвилину.">
@@ -49,15 +41,13 @@
     <meta property="og:type" content="website">
 
     <link rel="alternate" hreflang="uk" href="https://smartdiet.com.ua/index.html">
-<link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/index.html">
-<link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/index.html">
-<link rel="alternate" hreflang="x-default" href="https://smartdiet.com.ua/index.html">
+    <link rel="alternate" hreflang="en" href="https://smartdiet.com.ua/en/index.html">
+    <link rel="alternate" hreflang="fr" href="https://smartdiet.com.ua/fr/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://smartdiet.com.ua/index.html">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
-    
-    
 </head>
 <body>
 
@@ -67,7 +57,7 @@
             <i class="fa-solid fa-heart-pulse"></i> SmartDiet
         </div>
         
-        <nav class="desktop-nav" id="side-nav">
+        <nav class="desktop-nav">
             <a href="index.html" class="active">Головна</a>
             
             <div class="dropdown">
@@ -400,9 +390,9 @@
         </p>
     </div>
 
-    <button id="cta-btn" style="width: 100%; background: linear-gradient(to right, #f97316, #fb923c); color: white; padding: 20px; border: none; border-radius: 16px; font-size: 18px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);">
-        Отримати персональне меню →
-    </button>
+<button id="cta-btn" onclick="goToMenu()" style="width: 100%; background: linear-gradient(to right, #f97316, #fb923c); color: white; padding: 20px; border: none; border-radius: 16px; font-size: 18px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);">
+    Отримати персональне меню →
+</button>
 	
 </div>
     </main>
